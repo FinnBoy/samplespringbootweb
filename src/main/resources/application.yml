@@ -1,4 +1,4 @@
 
 spring:
   profiles:
-    active: web,dstest
+    active: web,dstest,static
