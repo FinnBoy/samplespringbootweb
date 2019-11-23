@@ -1,0 +1,21 @@
+
+spring:
+  # **********************************************************************************************************
+  #                                           Web: Static Resources
+  # **********************************************************************************************************
+  resources:
+    chain:
+      compressed: true
+      strategy:
+        content:
+          enabled: true
+          paths: # TODO
+
+        fixed:
+          enabled: true
+          paths: # TODO
+          version: # TODO
+
+    cache:
+      cachecontrol:
+        max-age: 1h
