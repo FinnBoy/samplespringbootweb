@@ -23,18 +23,6 @@ html {
     border:none;
 }
 
-.layui-icon-login-qq {
-    color:#3492ED;
-}
-
-.layui-icon-login-wechat {
-    color:#4DAF29;
-}
-
-.layui-icon-login-weibo {
-    color:#CF1900;
-}
-
 .layui-bg-white {
     background-color:#fff;
 }
@@ -51,6 +39,11 @@ html {
     height:50px;
     border-bottom:none;
     box-shadow:0 1px 2px 0 rgba(0, 0, 0, .05);
+}
+
+.layui-layout-admin .layui-header .layui-nav .layui-this:after, .layui-layout-admin .layui-header .layui-nav-bar {
+    height: 2px;
+    background-color: #20222A;
 }
 
 .layui-layout-admin .layui-header .layui-nav .layui-nav-more {
