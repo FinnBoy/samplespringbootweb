@@ -14,36 +14,36 @@
     <div class="layui-header" style="background: white">
         <!-- 头部区域 -->
         <ul class="layui-nav layui-layout-left">
-            <li class="layui-nav-item">
-                <a href="javascript:;" layadmin-event="flexible" title="侧边伸缩">
+            <li class="layui-nav-item" lay-unselect="">
+                <a href="javascript:;" title="侧边伸缩">
                     <i class="layui-icon layui-icon-shrink-right"></i>
                 </a>
             </li>
-            <li class="layui-nav-item">
+            <li class="layui-nav-item" lay-unselect="">
                 <a href="javascript:;" title="前台">
                     <i class="layui-icon layui-icon-website"></i>
                 </a>
             </li>
-            <li class="layui-nav-item">
+            <li class="layui-nav-item" lay-unselect="">
                 <a href="javascript:;" title="刷新">
                     <i class="layui-icon layui-icon-refresh-3"></i>
                 </a>
             </li>
         </ul>
-        <ul class="layui-nav layui-layout-right" lay-filter="layadmin-layout-right">
+        <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item" lay-unselect="" style="">
-                <a href="javascript:;" layadmin-event="message">
+                <a href="javascript:;">
                     <i class="layui-icon layui-icon-notice"></i>
                     <span class="layui-badge-dot"></span>
                 </a>
             </li>
             <li class="layui-nav-item" lay-unselect="" style="">
-                <a href="javascript:;" layadmin-event="note">
+                <a href="javascript:;">
                     <i class="layui-icon layui-icon-note"></i>
                 </a>
             </li>
             <li class="layui-nav-item" lay-unselect="" style="">
-                <a href="javascript:;" layadmin-event="fullscreen">
+                <a href="javascript:;">
                     <i class="layui-icon layui-icon-screen-full"></i>
                 </a>
             </li>
@@ -53,14 +53,16 @@
                     <span class="layui-nav-more"></span>
                 </a>
                 <dl class="layui-nav-child layui-anim layui-anim-upbit">
-                    <dd><a lay-href="set/user/info">基本资料</a></dd>
-                    <dd><a lay-href="set/user/password">修改密码</a></dd>
+                    <dd><a href="javascript:;">基本资料</a></dd>
+                    <dd><a href="javascript:;">修改密码</a></dd>
                     <hr>
-                    <dd layadmin-event="logout" style="text-align: center;"><a>退出</a></dd>
+                    <dd style="text-align: center;"><a>退出</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item" lay-unselect="" style="">
-                <a href="javascript:;" layadmin-event="about"><i class="layui-icon layui-icon-more-vertical"></i></a>
+                <a href="javascript:;">
+                    <i class="layui-icon layui-icon-more-vertical"></i>
+                </a>
             </li>
         </ul>
     </div>
@@ -69,22 +71,22 @@
     <div class="layui-side layui-side-menu">
         <div class="layui-side-scroll">
             <div class="layui-logo" lay-href="">
-                <span>layuiAdmin Pro</span>
+                <span>Logo</span>
             </div>
-            <ul class="layui-nav layui-nav-tree" lay-shrink="all" lay-filter="layadmin-system-side-menu">
-                <li data-name="index" data-jump="" class="layui-nav-item layui-nav-itemed" lay-unselect="">
+            <ul class="layui-nav layui-nav-tree" lay-shrink="all">
+                <li data-name="index" data-jump="" class="layui-nav-item layui-nav-itemed">
                     <a href="javascript:;" lay-tips="主页" lay-direction="2">
                         <i class="layui-icon layui-icon-home"></i>
                         <cite>主页</cite>
                     </a>
                 </li>
-                <li data-name="senior" data-jump="" class="layui-nav-item" lay-unselect="">
+                <li data-name="senior" data-jump="" class="layui-nav-item">
                     <a href="javascript:;" lay-tips="高级" lay-direction="2">
                         <i class="layui-icon layui-icon-senior"></i>
                         <cite>高级</cite>
                     </a>
                 </li>
-                <li data-name="user" data-jump="" class="layui-nav-item" lay-unselect="">
+                <li data-name="user" data-jump="" class="layui-nav-item">
                     <a href="javascript:;" lay-tips="用户" lay-direction="2">
                         <i class="layui-icon layui-icon-user"></i>
                         <cite>用户</cite>
@@ -95,7 +97,7 @@
     </div>
 
     <!-- 主体内容 -->
-    <div class="layui-body layui-bg-gray" id="LAY_app_body">
+    <div class="layui-body layui-bg-gray">
         <div style="padding: 15px;">内容主体区域</div>
     </div>
 
