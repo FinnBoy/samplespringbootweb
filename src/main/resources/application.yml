@@ -1,0 +1,48 @@
+
+spring:
+  profiles:
+    active: test
+
+
+# ************************************************************************************************************
+#                                             DataSource
+# ************************************************************************************************************
+app:
+  sql-database:
+    primary:
+      data-source-props:
+        name: primary
+        url: jdbc:mysql://******:3306/***
+        username: !********
+        password: !********
+        driver-class-name: com.mysql.jdbc.Driver
+      data-source:
+        maximum-pool-size: 30
+      jpa:
+        show-sql: true
+        properties:
+          hibernate.jdbc.batch_size: 500
+          hibernate.dialect: org.hibernate.dialect.MySQLDialect
+      hibernate:
+        ddl-auto: update
+        naming:
+          implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+          physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+
+    secondary:
+      data-source-props:
+        name: secondary
+        url: jdbc:mysql://******:3306/***
+        username: !********
+        password: !********
+        driver-class-name: com.mysql.jdbc.Driver
+        max-total: 10
+      jpa:
+        show-sql: true
+        properties:
+          hibernate.dialect: org.hibernate.dialect.MySQLDialect
+      hibernate:
+        ddl-auto: none
+        naming:
+          implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+          physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
