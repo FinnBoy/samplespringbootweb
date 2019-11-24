@@ -27,7 +27,7 @@
                 </a>
             </li>
             <li class="layui-nav-item" lay-unselect="">
-                <a href="index" title="上传">
+                <a href="javascript:;" title="上传" id="save-btn">
                     <i class="layui-icon layui-icon-upload-circle"></i>
                 </a>
             </li>
@@ -168,8 +168,15 @@ ace.require(['layui'], function (layui) {
 
     layui.use(['layer', 'form', 'jquery', 'element'], function (layer, form, $, element) {
         var element = layui.element;
-        var $editor = $('#editor');
-        var innerHtml = $editor.innerHTML;
+        $('#side-menu-btn').click(function () {
+            $('#side-menu').toggleClass('layui-side-collapse');
+        });
+        $('#save-btn').click(function () {
+            var src = editor.getValue();
+            if (src) {
+
+            }
+        });
     });
 });
 
