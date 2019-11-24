@@ -1,0 +1,83 @@
+
+/**
+ * header
+ */
+.layui-layout-admin .layui-header {
+    background-color: white;
+    height: 40px;
+    line-height: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: none;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .05);
+}
+
+.layui-layout-admin .layui-header .layui-logo {
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+}
+
+.layui-layout-admin .layui-header .layui-logo a {
+    padding: 0 20px;
+}
+
+.layui-layout-admin .layui-header .layui-nav .layui-nav-item {
+    height: 40px;
+    line-height: 40px;
+}
+
+.layui-layout-admin .layui-header .layui-nav .layui-nav-item .layui-icon {
+    font-size: 16px;
+}
+
+.layui-layout-admin .layui-header a, .layui-layout-admin .layui-header a cite {
+    color: #333;
+}
+
+.layui-layout-admin .layui-header a:hover {
+    color: #000;
+}
+
+.layui-layout-admin .layui-header .layui-nav .layui-this:after, .layui-layout-admin .layui-header .layui-nav-bar {
+    height: 2px;
+    background-color: #20222A;
+}
+
+/**
+ * side
+ */
+.layui-layout-admin .layui-side {
+    top: 40px;
+    width: 180px;
+    z-index: 1001;
+    border-bottom: none;
+    box-shadow: 2px 10px 2px 0 rgba(0, 0, 0, .05);
+}
+
+.layui-layout-admin .layui-side .layui-side-scroll {
+    width: 200px;
+}
+
+.layui-layout-admin .layui-side-menu .layui-nav {
+    margin-top: 20px;
+    background-color: white;
+}
+
+.layui-layout-admin .layui-side .layui-nav-itemed>a {
+    color: #666 !important;
+}
+
+.layui-layout-admin .layui-side a, .layui-layout-admin .layui-side a cite {
+    color: #666;
+}
+
+/**
+ * body
+ */
+.layui-layout-admin .layui-body {
+    top: 45px;
+    left: 185px;
+}
