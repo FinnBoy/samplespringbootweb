@@ -121,17 +121,27 @@ function foo(items) {
 </div>
 
 <script src="../component/layui/layui.js"></script>
-<script src="../component/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="../component/ace/src-noconflict/ace.js"></script>
+<script src="../component/ace/src-noconflict/ext-language_tools.js"></script>
 <script>
+ace.define('layui', function () {
+    return layui;
+});
+
+ace.require(['layui'], function (layui) {
+
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/twilight");
     editor.session.setMode("ace/mode/javascript");
 
-// JavaScript代码区域
-layui.use('element', function () {
-  var element = layui.element;
+    ace.config.set("enableBasicAutocompletion", true);
 
+    layui.use(['layer', 'form', 'jquery'], function (layer, form, $) {
+        var $editor = $('#editor');
+        var innerHtml = $editor.innerHTML;
+    });
 });
+
 </script>
 </body>
 </html>
