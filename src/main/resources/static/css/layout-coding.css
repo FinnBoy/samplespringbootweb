@@ -1,6 +1,6 @@
 
 /**
- * header
+ * layui: header
  */
 .layui-layout-admin .layui-header {
     background-color: white;
@@ -46,8 +46,12 @@
     background-color: #20222A;
 }
 
+.layui-layout-admin .layui-header .layui-nav .layui-nav-more {
+    border-top-color:#666;
+}
+
 /**
- * side
+ * layui: side
  */
 .layui-layout-admin .layui-side {
     top: 40px;
@@ -75,9 +79,44 @@
 }
 
 /**
- * body
+ * layui: body
  */
 .layui-layout-admin .layui-body {
-    top: 45px;
-    left: 185px;
+    top: 40px;
+    left: 180px;
+}
+
+/**
+ * ace
+ */
+/*
+.ace_editor {
+    position: relative !important;
+    border: 1px solid lightgray;
+    margin: auto;
+    height: 200px;
+    width: 100%;
+}
+.ace_editor {
+    border: 1px solid lightgray;
+    margin: auto;
+    height: 200px;
+    width: 80%;
+}
+.ace_editor {
+    position: fixed !important;
+    border: 1px solid lightgray;
+    top: 42px;
+    bottom: 0;
+    left: 182px;
+    right: 0;
+}
+*/
+.ace_editor {
+    position: fixed !important;
+    border: 1px solid lightgray;
+    top: 42px;
+    bottom: 0;
+    left: 182px;
+    right: 0;
 }
