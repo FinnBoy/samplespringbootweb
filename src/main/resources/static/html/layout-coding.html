@@ -132,11 +132,20 @@ ace.require(['layui'], function (layui) {
 
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/twilight");
-    editor.session.setMode("ace/mode/javascript");
+    editor.session.setMode("ace/mode/groovy");
+    // editor.session.setMode("ace/mode/javascript");
 
     ace.config.set("enableBasicAutocompletion", true);
 
-    layui.use(['layer', 'form', 'jquery'], function (layer, form, $) {
+    // enable autocompletion and snippets
+    editor.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: false,
+        enableLiveAutocompletion: true
+    });
+
+    layui.use(['layer', 'form', 'jquery', 'element'], function (layer, form, $, element) {
+        var element = layui.element;
         var $editor = $('#editor');
         var innerHtml = $editor.innerHTML;
     });
