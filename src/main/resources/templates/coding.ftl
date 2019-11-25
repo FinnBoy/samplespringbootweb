@@ -4,10 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>layout 后台大布局 - Layui</title>
+    <#assign test=Request.request.attributes??>
+    <#assign rup=Request["org.springframework.web.servlet.resource.ResourceUrlProvider"]>
+    <#assign rupTest=rup??>
+    <#assign ctx=request.getContextPath()>
+
+    <title>layout 后台大布局 - Layui ${rupTest?c}</title>
     <link rel="stylesheet" href="../resources/component/layui/css/layui.css">
     <link rel="stylesheet" href="../resources/component/layui/css/modules/layer/default/layer.css">
     <link rel="stylesheet" href="../resources/css/layout-coding.css">
+    <#--
+    <link rel="stylesheet" href="${rup.getForLookupPath("../resources/css/layout-coding.css")!'test'}">-->
+
 </head>
 <body class="layui-layout-body">
 
