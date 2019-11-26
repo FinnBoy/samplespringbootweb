@@ -64,7 +64,7 @@
             </li>
             <li class="layui-nav-item" lay-unselect="" style="">
                 <a href="javascript:;">
-                    <cite>贤心</cite>
+                    <cite>Finn</cite>
                     <span class="layui-nav-more"></span>
                 </a>
                 <dl class="layui-nav-child layui-anim layui-anim-upbit">
@@ -189,7 +189,14 @@ ace.require(['layui'], function (layui) {
         $('#save-btn').click(function () {
             var src = editor.getValue();
             if (src) {
-
+                $.ajax({
+                    url: 'save',
+                    type: 'post',
+                    data: src,
+                    success: function (response) {
+                        alert('save success: ' + response);
+                    }
+                });
             }
         });
     });

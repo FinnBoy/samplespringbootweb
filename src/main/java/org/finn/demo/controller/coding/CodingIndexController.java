@@ -4,6 +4,7 @@ import org.finn.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author Finn Zhao
@@ -18,6 +19,12 @@ public class CodingIndexController {
 
     @RequestMapping(value = {"/", "/index"})
     public String index() {
+        return "coding";
+    }
+
+    @RequestMapping(value = "/save")
+    @ResponseBody
+    public String save() {
         return "coding";
     }
 
