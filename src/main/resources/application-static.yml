@@ -5,20 +5,20 @@ spring:
   # **********************************************************************************************************
   resources:
     chain:
-      cache: true
+      cache: false
       compressed: true
       strategy:
         content:
           enabled: true
-          paths: /js/**,/css/**
+          paths: /component/**
 
         fixed:
           enabled: true
-          paths: /html/**
+          paths: /html/**,/js/**,/css/**
           version: ${random.uuid}
 
     cache:
       cachecontrol:
-        max-age: 1h
-        no-cache: true
-        no-store: false
+        #max-age: 1h
+        #no-cache: true
+        no-store: true
