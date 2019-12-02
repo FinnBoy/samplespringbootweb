@@ -192,7 +192,7 @@ ace.require(['layui'], function (layui) {
                 $.ajax({
                     url: 'save',
                     type: 'post',
-                    data: src,
+                    data: {code: src},
                     success: function (response) {
                         alert('save success: ' + response);
                     }
