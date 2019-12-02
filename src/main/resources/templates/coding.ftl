@@ -22,7 +22,7 @@
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
         <div class="layui-logo">
-            <a href="javascript:;" title="侧边伸缩">
+            <a href="javascript:;" title="侧边伸缩" id="side-menu-btn">
                 <i class="layui-icon layui-icon-shrink-right"></i>
             </a>
             <span>Logo</span>
@@ -83,7 +83,7 @@
     </div>
 
     <!-- 侧边菜单 -->
-    <div class="layui-side layui-side-menu">
+    <div class="layui-side layui-side-menu" id="side-menu">
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-shrink="all">
                 <li data-name="index" data-jump="" class="layui-nav-item layui-nav-itemed">
