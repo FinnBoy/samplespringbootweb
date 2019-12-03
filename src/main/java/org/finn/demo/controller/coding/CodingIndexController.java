@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @version 2019-11-19
  */
 @Controller
-@RequestMapping("/coding")
+@RequestMapping("/online")
 public class CodingIndexController {
 
     private static final Logger log = LoggerFactory.getLogger(CodingIndexController.class);
@@ -22,16 +22,21 @@ public class CodingIndexController {
     @Autowired
     private UserService userService;
 
+    @RequestMapping(value = {""})
+    public String brief() {
+        return "redirect:online/";
+    }
+
     @RequestMapping(value = {"/", "/index"})
     public String index() {
-        return "coding";
+        return "online/coding";
     }
 
     @RequestMapping(value = "/save")
     @ResponseBody
     public String save(@RequestParam("code") String code) {
         log.info(code);
-        return "coding";
+        return "online/coding";
     }
 
 }
