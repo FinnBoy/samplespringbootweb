@@ -9,7 +9,7 @@ require.config({
     paths: {
         jquery: 'jquery-3.4.1.min',
         layui: 'layui/layui',
-        ace: 'acelib',
+        ace: 'ace',
         jqContextMenu: 'plugins/jquery.contextMenu.min',
         jqPosition: 'plugins/jquery.ui.position.min',
         slideout: 'plugins/slideout.min',
@@ -23,12 +23,15 @@ require.config({
     shim: {
         layui: {
             exports: 'layui'
-        },
+        },/*
+        ace: {
+            exports: 'ace'
+        },*/
     },
 });
 
 
-require(['jquery', 'layui', 'ace/ace', 'ace/ext/language_tools'], function ($, layui, ace) {
+require(['jquery', 'layui', 'ace/ace'], function ($, layui, ace) {
 
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/twilight");
