@@ -5,6 +5,6 @@ spring:
 
   devtools:
     livereload:
-      enabled: true
-    restart:
       enabled: false
+    restart:
+      enabled: true
