@@ -40,40 +40,52 @@
         height: 100%;
     }
 
+    .etl-side {
+        height: 96%;
+        margin: 10px 0;
+        border: 1px solid #e2e2e2;
+    }
     .etl-content {
-        height: 100%;
+        height: 96%;
+        margin: 10px;
+        border: 1px solid #e2e2e2;
     }
 
     .etl-editor {
         height: 100%;
         min-height: 100%;
     }
+
+    .etl-bg-white {
+        background-color: white !important;
+        color: #626262;
+    }
 </style>
 
-<div class="layui-fluid layui-bg-gray">
+<div class="layui-fluid">
     <!-- Header -->
-    <div class="layui-row etl-header layui-bg-red">
-        <div class="layui-bg-blue">Header</div>
+    <div class="layui-row etl-header layui-bg-gray">
+        <div class="">Header</div>
     </div>
     <!-- Body -->
     <div class="layui-row etl-body">
         <!-- Left -->
-        <div class="layui-col-md2 etl-body-left layui-bg-green">
-            <div class="">Left</div>
+        <div class="layui-col-md2 etl-body-left etl-bg-white">
+            <div class="etl-side etl-bg-white">Left</div>
         </div>
         <!-- Center -->
-        <div class="layui-col-md8 etl-body-center layui-bg-cyan">
-            <div class="etl-content">
+        <div class="layui-col-md8 etl-body-center etl-bg-white">
+            <div class="etl-content etl-bg-white">
                 <pre class="etl-editor" id="editor"></pre>
             </div>
         </div>
         <!-- Right -->
-        <div class="layui-col-md2 etl-body-right layui-bg-green">
-            <div class="">Right</div>
+        <div class="layui-col-md2 etl-body-right etl-bg-white">
+            <div class="etl-side etl-bg-white">Right</div>
         </div>
     </div>
     <!-- Footer -->
-    <div class="layui-row etl-footer layui-bg-red">
+    <div class="layui-row etl-footer layui-bg-gray">
         <div class="">Footer</div>
     </div>
 </div>
