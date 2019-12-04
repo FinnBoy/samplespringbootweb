@@ -21,13 +21,22 @@
     }
 
     div.etl-header {
-        height: 10%;
+        height: 12%;
     }
     div.etl-body {
-        height: 80%;
+        height: 82%;
     }
     div.etl-footer {
-        height: 10%;
+        height: 6%;
+    }
+
+    .etl-header-menu {
+        height: 60%;
+        margin: 0 0 8px 0;
+    }
+    .etl-header-command {
+        height: 35%;
+        margin: 8px 0 0 0;
     }
 
     .etl-body-left {
@@ -40,14 +49,19 @@
         height: 100%;
     }
 
-    .etl-side {
+    .etl-left-side {
         height: 96%;
-        margin: 10px 0;
-        border: 1px solid #e2e2e2;
+        margin: 8px 0;
+        border-right: 1px solid #e2e2e2;
+    }
+    .etl-right-side {
+        height: 96%;
+        margin: 8px 0;
+        border-left: 1px solid #e2e2e2;
     }
     .etl-content {
         height: 96%;
-        margin: 10px;
+        margin: 8px 15px;
         border: 1px solid #e2e2e2;
     }
 
@@ -64,14 +78,15 @@
 
 <div class="layui-fluid">
     <!-- Header -->
-    <div class="layui-row etl-header layui-bg-gray">
-        <div class="">Header</div>
+    <div class="layui-row etl-header">
+        <div class="etl-header-menu layui-bg-gray">Header</div>
+        <div class="etl-header-command layui-bg-gray">Header</div>
     </div>
     <!-- Body -->
     <div class="layui-row etl-body">
         <!-- Left -->
         <div class="layui-col-md2 etl-body-left etl-bg-white">
-            <div class="etl-side etl-bg-white">Left</div>
+            <div class="etl-left-side etl-bg-white">Left</div>
         </div>
         <!-- Center -->
         <div class="layui-col-md8 etl-body-center etl-bg-white">
@@ -81,7 +96,7 @@
         </div>
         <!-- Right -->
         <div class="layui-col-md2 etl-body-right etl-bg-white">
-            <div class="etl-side etl-bg-white">Right</div>
+            <div class="etl-right-side etl-bg-white">Right</div>
         </div>
     </div>
     <!-- Footer -->
