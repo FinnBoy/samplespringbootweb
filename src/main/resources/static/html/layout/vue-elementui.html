@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../../component/elementui/index.css">
+</head>
+<body>
+    <div id="app">
+        <el-row class="tac">
+            <el-col>
+                <el-menu class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+                    <menutree :data="menu_data"></menutree>
+                </el-menu>
+            </el-col>
+        </el-row>
+    </div>
+
+    <template id="menutree">
+        <div>
+            <label v-for="menu in data" :key="menu.index">
+                <el-submenu :index="menu.index" v-if="menu.children">
+                    <template slot="title">
+                        <span>{{menu.name}}</span>
+                    </template>
+                    <label>
+                        <menutree :data="menu.children"></menutree>
+                    </label>
+                </el-submenu>
+                <el-menu-item v-else :index="menu.index">
+                    <span slot="title">{{menu.name}}</span>
+                </el-menu-item>
+            </label>
+        </div>
+    </template>
+
+    <script src="../../component/vue/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="../../component/elementui/index.js"></script>
+
+    <script src="vue-elementui.js"></script>
+
+</body>
+</html>
