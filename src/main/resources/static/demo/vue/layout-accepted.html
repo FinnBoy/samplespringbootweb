@@ -6,6 +6,8 @@
 
     <link rel="stylesheet" href="../../component/elementui/index.css">
 
+    <link rel="stylesheet" href="../../component/animate/animate.css">
+
     <link rel="stylesheet" href="layout.css">
 </head>
 <body>
@@ -19,10 +21,12 @@
                         <el-row>
                             <el-col :span="6">
 
-                                <el-radio-group v-model="isCollapse">
+                                <el-radio-group v-model="collapsed">
                                     <el-radio-button :label="false">展开</el-radio-button>
                                     <el-radio-button :label="true">收起</el-radio-button>
                                 </el-radio-group>
+
+                                <el-button @click="show = !show">Click Me</el-button>
 
                             </el-col>
                             <el-col :span="18">
@@ -66,7 +70,7 @@
                                             class=""
                                             background-color="#545c64"
                                             text-color="#fff"
-                                            :collapse="isCollapse"
+                                            :collapse="collapsed"
                                             active-text-color="#ffd04b">
                                         <el-submenu index="1">
                                             <template slot="title">
@@ -104,7 +108,22 @@
                             </el-row>
 
                         </el-aside>
-                        <el-main>Main</el-main>
+                        <el-main>
+
+                            <transition name="custom" enter-active-class="animated slideInLeft"
+                                        leave-active-class="animated slideOutLeft">
+                                <div v-show="show">Main</div>
+                            </transition>
+
+                            <transition name="el-fade-in">
+                                <div v-show="show">Main</div>
+                            </transition>
+
+                            <transition name="el-fade-in-linear">
+                                <div v-show="show">Main</div>
+                            </transition>
+
+                        </el-main>
                     </el-container>
                 </el-container>
 
@@ -116,6 +135,6 @@
     <!-- 引入组件库 -->
     <script src="../../component/elementui/index.js"></script>
 
-    <script src="layout.js"></script>
+    <script src="layout-accepted.js"></script>
 </body>
 </html>
