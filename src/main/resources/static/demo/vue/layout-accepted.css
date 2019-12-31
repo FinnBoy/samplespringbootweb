@@ -1,0 +1,49 @@
+
+body {
+    background-color: grey;
+    margin: 0;
+    padding: 0;
+}
+
+.el-header {
+    background-color: #B3C0D1;
+    color: #333;
+    padding: 0;
+}
+
+.el-footer {
+    background-color: #B3C0D1;
+    color: #333;
+}
+
+.el-aside {
+    background-color: #D3DCE6;
+    color: #333;
+}
+
+.el-main {
+    background-color: #E9EEF3;
+    color: #333;
+}
+
+.el-header .el-button {
+    padding: 11px 11px;
+    border: none;
+}
+.el-header .el-button i {
+    font-size: 28px;
+}
+
+.el-header .el-avatar {
+    height: 36px;
+    margin: 7px 0;
+    overflow: inherit;
+}
+
+.el-header .el-image {
+    height: 40px;
+}
+/*
+.el-header .el-avatar {
+    line-height: 60px;
+}*/
