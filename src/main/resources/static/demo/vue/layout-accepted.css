@@ -40,10 +40,11 @@ body {
     overflow: inherit;
 }
 
-.el-header .el-image {
-    height: 40px;
+.el-header .el-dropdown {
+
 }
-/*
-.el-header .el-avatar {
-    line-height: 60px;
-}*/
+
+.el-header .el-image {
+
+}
+

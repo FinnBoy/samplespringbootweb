@@ -20,10 +20,12 @@
 
                         <el-row>
                             <el-col :span="1">
-                                <el-button plain type="primary" icon="el-icon-s-unfold"></el-button>
+                                <el-button plain type="primary" icon="el-icon-s-unfold" @click="collapsed=!collapsed"/>
                             </el-col>
-                            <el-col :span="23">
+                            <el-col :span="22">
                                 <span><el-avatar icon="el-icon-user-solid"></el-avatar></span>
+                            </el-col>
+                            <el-col :span="1">
                                 <el-dropdown>
                                     <span class="el-dropdown-link">
                                         <el-avatar icon="el-icon-user-solid"></el-avatar>
@@ -33,7 +35,7 @@
                                         <el-dropdown-item>狮子头</el-dropdown-item>
                                         <el-dropdown-item>螺蛳粉</el-dropdown-item>
                                         <el-dropdown-item disabled>双皮奶</el-dropdown-item>
-                                        <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
+                                        <el-dropdown-item divided>退出</el-dropdown-item>
                                     </el-dropdown-menu>
                                 </el-dropdown>
                             </el-col>
