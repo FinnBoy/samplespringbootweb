@@ -1,0 +1,110 @@
+
+/************************************************************************************************************
+ * Layout #ecf5ff #b3d8ff #409EFF   7F9CBB 81A0C1 7BA0C8 6B85A0 88A0BB 7F96B2 8899BB 7F96B2
+ ************************************************************************************************************/
+body {
+    background-color: grey;
+    margin: 0;
+    padding: 0;
+}
+
+.app-body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.el-header {
+    background-color: #ecf5ff;
+    color: #333;
+    padding: 0;
+}
+
+.el-footer {
+    background-color: #B3C0D1;
+    color: #333;
+}
+
+.el-aside {
+    background-color: #66778F;
+    color: #333;
+}
+
+.el-main {
+    background-color: #fff;
+    color: #333;
+}
+
+/************************************************************************************************************
+ * Header
+ ************************************************************************************************************/
+.el-header .el-button {
+    padding: 11px 11px;
+    border: none;
+    background-color: #ecf5ff;
+    color: #409EFF;
+}
+.el-header .el-button:hover {
+    background-color: #ecf5ff;
+    color: #409EFF;
+}
+.el-header .el-button i {
+    font-size: 28px;
+}
+
+/**
+ * inline-block 默认放在 baseline (默认vertical-align为baseline)上，其高度是由 line-height 和 font-size 属性决定的。
+ */
+.el-header .el-dropdown {
+    vertical-align: middle;
+    font-size: 0px;
+}
+
+.el-header .el-image {
+    height: 40px;
+    width: 70px;
+    margin: 5px 0;
+    vertical-align: middle;
+}
+
+.el-header .el-avatar {
+    height: 36px;
+    margin: 7px 0;
+    background-color: #b3d8ff;
+}
+
+/************************************************************************************************************
+ * Aside
+ ************************************************************************************************************/
+.el-aside .el-menu {
+    border-right: none;
+}
+.el-aside .el-menu [class^=el-icon-] {
+    color: #f2f2f2;
+}
+
+.el-aside .el-menu--collapse.el-menu {
+    width: 50px;
+}
+/*
+.el-aside .el-menu.el-menu--inline {
+    background-color: #666F7F !important;
+}
+*/
+.el-aside .el-menu--collapse.el-menu .el-submenu__title {
+    padding: 0 13px !important;
+}
+.el-aside .el-menu--collapse.el-menu .el-tooltip {
+    padding: 0 13px !important;
+}
+/*
+.el-aside .el-menu .el-submenu__title:hover {
+    background-color: #ecf5ff !important;
+}
+.el-aside .el-menu .el-menu-item:hover {
+    background-color: #ecf5ff !important;
+}
+.el-aside .el-menu .el-menu-item.is-active:hover {
+    color: #409EFF !important;
+}
+*/
