@@ -40,20 +40,22 @@ body {
     font-size: 28px;
 }
 
-.el-header .el-avatar {
-    height: 36px;
-    margin: 7px 0;
-    overflow: inherit;
-}
-
+/**
+ * inline-block 默认放在 baseline (默认vertical-align为baseline)上，其高度是由 line-height 和 font-size 属性决定的。
+ */
 .el-header .el-dropdown {
-
+    vertical-align: middle;
+    font-size: 0px;
 }
 
 .el-header .el-image {
     height: 40px;
     width: 70px;
     margin: 5px 0;
-    overflow: inherit;
+    vertical-align: middle;
 }
 
+.el-header .el-avatar {
+    height: 36px;
+    margin: 7px 0;
+}
