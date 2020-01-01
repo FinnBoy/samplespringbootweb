@@ -12,116 +12,112 @@
 </head>
 <body>
     <div id="app" class="app-body">
-        <el-row class="">
-            <el-col :span="24">
 
-                <el-container>
-                    <el-header height="50px">
+        <el-container>
+            <el-header height="50px">
 
-                        <el-row>
-                            <el-col :span="1">
-                                <el-button plain icon="el-icon-s-unfold" @click="collapsed=!collapsed"
-                                           v-show="collapsed">
-                                </el-button>
-                                <span></span>
-                                <el-button plain icon="el-icon-s-fold" @click="collapsed=!collapsed"
-                                           v-show="!collapsed">
-                                </el-button>
-                            </el-col>
-                            <el-col :span="2">
-                                <el-image :src="'../../images/FinnYellow.png'" :fit="'fill'"></el-image>
-                            </el-col>
-                            <el-col :span="20">
-                                <span>
-                                    <!-- <el-avatar icon="el-icon-user-solid"></el-avatar> -->&nbsp;
-                                </span>
-                            </el-col>
-                            <el-col :span="1">
-                                <el-dropdown>
-                                    <span class="el-dropdown-link">
-                                        <el-avatar src="../../images/user.png"></el-avatar>
-                                    </span>
-                                    <el-dropdown-menu slot="dropdown">
-                                        <el-dropdown-item>黄金糕</el-dropdown-item>
-                                        <el-dropdown-item>狮子头</el-dropdown-item>
-                                        <el-dropdown-item disabled>双皮奶</el-dropdown-item>
-                                        <el-dropdown-item divided>退出</el-dropdown-item>
-                                    </el-dropdown-menu>
-                                </el-dropdown>
-                            </el-col>
-                        </el-row>
+                <el-row>
+                    <el-col :span="1">
+                        <el-button plain icon="el-icon-s-unfold" @click="collapsed=!collapsed"
+                                   v-show="collapsed">
+                        </el-button>
+                        <span></span>
+                        <el-button plain icon="el-icon-s-fold" @click="collapsed=!collapsed"
+                                   v-show="!collapsed">
+                        </el-button>
+                    </el-col>
+                    <el-col :span="2">
+                        <el-image :src="'../../images/FinnYellow.png'" :fit="'fill'"></el-image>
+                    </el-col>
+                    <el-col :span="20">
+                        <span>
+                            <!-- <el-avatar icon="el-icon-user-solid"></el-avatar> -->&nbsp;
+                        </span>
+                    </el-col>
+                    <el-col :span="1">
+                        <el-dropdown>
+                            <span class="el-dropdown-link">
+                                <el-avatar src="../../images/user.png"></el-avatar>
+                            </span>
+                            <el-dropdown-menu slot="dropdown">
+                                <el-dropdown-item>黄金糕</el-dropdown-item>
+                                <el-dropdown-item>狮子头</el-dropdown-item>
+                                <el-dropdown-item disabled>双皮奶</el-dropdown-item>
+                                <el-dropdown-item divided>退出</el-dropdown-item>
+                            </el-dropdown-menu>
+                        </el-dropdown>
+                    </el-col>
+                </el-row>
 
-                    </el-header>
-                    <el-container>
-                        <el-aside>
+            </el-header>
+            <el-container>
+                <el-aside>
 
-                            <el-row>
-                                <el-col>
+                    <el-row>
+                        <el-col>
 
-                                    <el-menu
-                                            default-active="'2'"
-                                            class=""
-                                            background-color="#545c64"
-                                            text-color="#fff"
-                                            :collapse="collapsed"
-                                            active-text-color="#ffd04b">
-                                        <el-submenu index="1">
-                                            <template slot="title">
-                                                <i class="el-icon-location"></i>
-                                                <span>导航一</span>
-                                            </template>
-                                            <el-menu-item-group>
-                                                <template slot="title">分组一</template>
-                                                <el-menu-item index="1-1">选项1</el-menu-item>
-                                                <el-menu-item index="1-2">选项2</el-menu-item>
-                                            </el-menu-item-group>
-                                            <el-menu-item-group title="分组2">
-                                                <el-menu-item index="1-3">选项3</el-menu-item>
-                                            </el-menu-item-group>
-                                            <el-submenu index="1-4">
-                                                <template slot="title">选项4</template>
-                                                <el-menu-item index="1-4-1">选项1</el-menu-item>
-                                            </el-submenu>
-                                        </el-submenu>
-                                        <el-menu-item index="2">
-                                            <i class="el-icon-menu"></i>
-                                            <span slot="title">导航二</span>
-                                        </el-menu-item>
-                                        <el-menu-item index="3" disabled>
-                                            <i class="el-icon-document"></i>
-                                            <span slot="title">导航三</span>
-                                        </el-menu-item>
-                                        <el-menu-item index="4">
-                                            <i class="el-icon-setting"></i>
-                                            <span slot="title">导航四</span>
-                                        </el-menu-item>
-                                    </el-menu>
+                            <el-menu
+                                    default-active="'2'"
+                                    class=""
+                                    background-color="#545c64"
+                                    text-color="#fff"
+                                    :collapse="collapsed"
+                                    active-text-color="#ffd04b">
+                                <el-submenu index="1">
+                                    <template slot="title">
+                                        <i class="el-icon-location"></i>
+                                        <span>导航一</span>
+                                    </template>
+                                    <el-menu-item-group>
+                                        <template slot="title">分组一</template>
+                                        <el-menu-item index="1-1">选项1</el-menu-item>
+                                        <el-menu-item index="1-2">选项2</el-menu-item>
+                                    </el-menu-item-group>
+                                    <el-menu-item-group title="分组2">
+                                        <el-menu-item index="1-3">选项3</el-menu-item>
+                                    </el-menu-item-group>
+                                    <el-submenu index="1-4">
+                                        <template slot="title">选项4</template>
+                                        <el-menu-item index="1-4-1">选项1</el-menu-item>
+                                    </el-submenu>
+                                </el-submenu>
+                                <el-menu-item index="2">
+                                    <i class="el-icon-menu"></i>
+                                    <span slot="title">导航二</span>
+                                </el-menu-item>
+                                <el-menu-item index="3" disabled>
+                                    <i class="el-icon-document"></i>
+                                    <span slot="title">导航三</span>
+                                </el-menu-item>
+                                <el-menu-item index="4">
+                                    <i class="el-icon-setting"></i>
+                                    <span slot="title">导航四</span>
+                                </el-menu-item>
+                            </el-menu>
 
-                                </el-col>
-                            </el-row>
+                        </el-col>
+                    </el-row>
 
-                        </el-aside>
-                        <el-main>
+                </el-aside>
+                <el-main>
 
-                            <transition name="custom" enter-active-class="animated slideInLeft"
-                                        leave-active-class="animated slideOutLeft">
-                                <div v-show="show">Main</div>
-                            </transition>
+                    <transition name="custom" enter-active-class="animated slideInLeft"
+                                leave-active-class="animated slideOutLeft">
+                        <div v-show="show">Main</div>
+                    </transition>
 
-                            <transition name="el-fade-in">
-                                <div v-show="show">Main</div>
-                            </transition>
+                    <transition name="el-fade-in">
+                        <div v-show="show">Main</div>
+                    </transition>
 
-                            <transition name="el-fade-in-linear">
-                                <div v-show="show">Main</div>
-                            </transition>
+                    <transition name="el-fade-in-linear">
+                        <div v-show="show">Main</div>
+                    </transition>
 
-                        </el-main>
-                    </el-container>
-                </el-container>
+                </el-main>
+            </el-container>
+        </el-container>
 
-            </el-col>
-        </el-row>
     </div>
 
     <script src="../../component/vue/vue.js"></script>

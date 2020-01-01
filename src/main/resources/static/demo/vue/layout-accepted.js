@@ -3,7 +3,8 @@ new Vue({
     data: function () {
         return {
             collapsed: true,
-            show: true
+            show: true,
+            drawer: false,
         }
     },
     methods: {
