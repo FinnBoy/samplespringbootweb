@@ -16,7 +16,7 @@ new Vue({
                 this.collapsed = val;
             } else {
                 this.collapsed = val;
-                this.asideWidth = '300px';
+                this.asideWidth = '240px'; // 300px
             }
 
         },
