@@ -6,7 +6,7 @@ body {
 }
 
 .el-header {
-    background-color: #B3C0D1;
+    background-color: #eee;
     color: #333;
     padding: 0;
 }
@@ -29,6 +29,12 @@ body {
 .el-header .el-button {
     padding: 11px 11px;
     border: none;
+    background-color: #eee;
+    color: #E6A23C;
+}
+.el-header .el-button:hover {
+    background-color: #eee;
+    color: #E6A23C;
 }
 .el-header .el-button i {
     font-size: 28px;
@@ -45,6 +51,9 @@ body {
 }
 
 .el-header .el-image {
-
+    height: 40px;
+    width: 70px;
+    margin: 5px 0;
+    overflow: inherit;
 }
 
