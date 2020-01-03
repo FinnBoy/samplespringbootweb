@@ -1,1 +1,1 @@
-<#include "vue/home.html">
+<#include "home.html">
