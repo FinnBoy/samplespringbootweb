@@ -17,7 +17,7 @@ public class IndexController {
 
     @RequestMapping(value = {"/", "/index"})
     public String index() {
-        return "module/index";
+        return "index";
     }
 
 }
