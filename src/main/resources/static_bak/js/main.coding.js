@@ -31,14 +31,17 @@ require.config({
 require(['jquery', 'layui', 'ace/ace', 'ace/ext/language_tools'], function ($, layui, ace) {
 
     var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/twilight");
+    // editor.setTheme("ace/theme/twilight");
+    // editor.setTheme("ace/theme/eclipse");
+    // editor.setTheme("ace/theme/github");
+    editor.setTheme("ace/theme/xcode");
     editor.session.setMode("ace/mode/groovy");
     // editor.session.setMode("ace/mode/javascript");
 
     // enable autocompletion and snippets
     editor.setOptions({
         enableBasicAutocompletion: true,
-        enableSnippets: false,
+        enableSnippets: true,
         enableLiveAutocompletion: true
     });
 
