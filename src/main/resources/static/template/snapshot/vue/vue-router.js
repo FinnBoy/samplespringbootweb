@@ -31,11 +31,30 @@ var PartsView = {
     template: '<div>Parts</div>'
 }
 
-var componentC = {
+var SettingView = {
     data: function () {
         return {}
     },
-    template: '<div>setting</div>'
+    template: `
+        <div>
+            <h2>Setting</h2>
+            <hr>
+            <router-view name="auth"></router-view>
+            <router-view name="basic"></router-view>
+        </div>
+    `
+}
+var AuthView = {
+    data: function () {
+        return {}
+    },
+    template: '<div>Auth</div>'
+}
+var BasicView = {
+    data: function () {
+        return {}
+    },
+    template: '<div>Basic</div>'
 }
 
 let router = new VueRouter({
@@ -63,8 +82,17 @@ let router = new VueRouter({
             ]
         },
         {
-            path: '/setting/auth',
-            component: componentC
+            path: '/setting',
+            component: SettingView,
+            children: [
+                {
+                    path: '',
+                    components: {
+                        auth: AuthView,
+                        basic: BasicView
+                    }
+                },
+            ]
         }
     ]
 })
