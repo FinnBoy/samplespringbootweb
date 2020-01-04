@@ -101,7 +101,7 @@ body {
 
 /* el-aside */
 .finn-theme-blue .el-aside {
-    background-color: #66778F;
+    background-color: #304156;
 }
 .finn-theme-blue .el-aside .el-menu [class^=el-icon-] {
     color: #f2f2f2;
@@ -109,23 +109,23 @@ body {
 
 /* el-menu */
 .finn-theme-blue .el-menu {
-    background-color: #66778F;
+    background-color: #304156;
     color: #f2f2f2;
 }
 .finn-theme-blue .el-menu .el-menu-item {
-    background-color: #66778F;
+    background-color: #304156;
     color: #f2f2f2;
 }
 .finn-theme-blue .el-menu .el-submenu__title {
-    background-color: #66778F;
+    background-color: #304156;
     color: #f2f2f2;
 }
 .finn-theme-blue .el-menu-item.is-active {
-    color: #b3d8ff;
+    color: #409eff;
 }
 .finn-theme-blue .el-menu-item:hover, .finn-theme-blue .el-menu-item:focus {
-    background-color: #525F72;
+    background-color: #263445;
 }
 .finn-theme-blue .el-submenu__title:hover, .finn-theme-blue .el-submenu__title:focus {
-    background-color: #525F72;
+    background-color: #263445;
 }
