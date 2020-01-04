@@ -3,7 +3,6 @@
  * Layout #ecf5ff #b3d8ff #409EFF   7F9CBB 81A0C1 7BA0C8 6B85A0 88A0BB 7F96B2 8899BB 7F96B2
  ************************************************************************************************************/
 body {
-    background-color: grey;
     margin: 0;
     padding: 0;
 }
@@ -15,24 +14,16 @@ body {
 }
 
 .el-header {
-    background-color: #ecf5ff;
-    color: #333;
     padding: 0;
 }
 
 .el-footer {
-    background-color: #B3C0D1;
-    color: #333;
 }
 
 .el-aside {
-    background-color: #66778F;
-    color: #333;
 }
 
 .el-main {
-    background-color: #fff;
-    color: #333;
 }
 
 /************************************************************************************************************
@@ -41,12 +32,6 @@ body {
 .el-header .el-button {
     padding: 11px 11px;
     border: none;
-    background-color: #ecf5ff;
-    color: #409EFF;
-}
-.el-header .el-button:hover {
-    background-color: #ecf5ff;
-    color: #409EFF;
 }
 .el-header .el-button i {
     font-size: 28px;
@@ -70,7 +55,6 @@ body {
 .el-header .el-avatar {
     height: 36px;
     margin: 7px 0;
-    background-color: #b3d8ff;
 }
 
 /************************************************************************************************************
@@ -78,9 +62,6 @@ body {
  ************************************************************************************************************/
 .el-aside .el-menu {
     border-right: none;
-}
-.el-aside .el-menu [class^=el-icon-] {
-    color: #f2f2f2;
 }
 
 .el-aside .el-menu--collapse.el-menu {
@@ -97,14 +78,54 @@ body {
 .el-aside .el-menu--collapse.el-menu .el-tooltip {
     padding: 0 13px !important;
 }
-/*
-.el-aside .el-menu .el-submenu__title:hover {
-    background-color: #ecf5ff !important;
+
+
+/************************************************************************************************************
+ * theme: blue (#409EFF #ecf5ff #b3d8ff)
+ ************************************************************************************************************/
+/* el-header */
+.finn-theme-blue .el-header {
+    background-color: #ecf5ff;
 }
-.el-aside .el-menu .el-menu-item:hover {
-    background-color: #ecf5ff !important;
+.finn-theme-blue .el-header .el-button {
+    background-color: #ecf5ff;
+    color: #409EFF;
 }
-.el-aside .el-menu .el-menu-item.is-active:hover {
-    color: #409EFF !important;
+.finn-theme-blue .el-header .el-button:hover {
+    background-color: #ecf5ff;
+    color: #409EFF;
 }
-*/
+.finn-theme-blue .el-header .el-avatar {
+    background-color: #b3d8ff;
+}
+
+/* el-aside */
+.finn-theme-blue .el-aside {
+    background-color: #66778F;
+}
+.finn-theme-blue .el-aside .el-menu [class^=el-icon-] {
+    color: #f2f2f2;
+}
+
+/* el-menu */
+.finn-theme-blue .el-menu {
+    background-color: #66778F;
+    color: #f2f2f2;
+}
+.finn-theme-blue .el-menu .el-menu-item {
+    background-color: #66778F;
+    color: #f2f2f2;
+}
+.finn-theme-blue .el-menu .el-submenu__title {
+    background-color: #66778F;
+    color: #f2f2f2;
+}
+.finn-theme-blue .el-menu-item.is-active {
+    color: #b3d8ff;
+}
+.finn-theme-blue .el-menu-item:hover, .finn-theme-blue .el-menu-item:focus {
+    background-color: #525F72;
+}
+.finn-theme-blue .el-submenu__title:hover, .finn-theme-blue .el-submenu__title:focus {
+    background-color: #525F72;
+}
