@@ -5,17 +5,37 @@ var UploadView = {
     },
     template: '#upload-view'
 }
+
 var WorkbenchView = {
     data: function () {
         return {}
     },
     template: '#workbench-view'
 }
+var WorkbenchHomeView = {
+    data: function () {
+        return {}
+    },
+    template: '#workbench-home-view'
+}
+var AgentView = {
+    data: function () {
+        return {}
+    },
+    template: '<div>Agent</div>'
+}
+var PartsView = {
+    data: function () {
+        return {}
+    },
+    template: '<div>Parts</div>'
+}
+
 var componentC = {
     data: function () {
         return {}
     },
-    template: '<span>setting</span>'
+    template: '<div>setting</div>'
 }
 
 let router = new VueRouter({
@@ -24,9 +44,23 @@ let router = new VueRouter({
             path: '/upload',
             component: UploadView
         },
-        {
-            path: '/workbench/agent',
-            component: WorkbenchView
+        { // 嵌套路由：组件配置
+            path: '/workbench',
+            component: WorkbenchView,
+            children: [
+                {
+                    path: '',
+                    component: WorkbenchHomeView
+                },
+                {
+                    path: 'agent',
+                    component: AgentView
+                },
+                {
+                    path: 'parts',
+                    component: PartsView
+                }
+            ]
         },
         {
             path: '/setting/auth',
