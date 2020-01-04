@@ -107,12 +107,18 @@
         <div>Upload</div>
     </template>
 
-    <template id="workbench-view">
+    <template id="workbench-view"><!-- 嵌套路由：组件配置 -->
+        <div>
+            <h2>Workbench</h2>
+            <hr>
+            <router-view></router-view>
+        </div>
+    </template>
+
+    <template id="workbench-home-view">
         <div>
             <router-link to="/workbench/agent">Agent</router-link>
-            <router-link to="/workbench/other">Other</router-link>
-            <br/>
-            <router-view></router-view>
+            <router-link to="/workbench/parts">Parts</router-link>
         </div>
     </template>
 

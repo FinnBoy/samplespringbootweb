@@ -5,17 +5,57 @@ var UploadView = {
     },
     template: '#upload-view'
 }
+
 var WorkbenchView = {
     data: function () {
         return {}
     },
     template: '#workbench-view'
 }
-var componentC = {
+var WorkbenchHomeView = {
     data: function () {
         return {}
     },
-    template: '<span>setting</span>'
+    template: '#workbench-home-view'
+}
+var AgentView = {
+    data: function () {
+        return {}
+    },
+    template: '<div>Agent</div>'
+}
+var PartsView = {
+    data: function () {
+        return {}
+    },
+    template: '<div>Parts</div>'
+}
+
+// 嵌套命名视图：组件配置
+var SettingView = {
+    data: function () {
+        return {}
+    },
+    template: `
+        <div>
+            <h2>Setting</h2>
+            <hr>
+            <router-view name="auth"></router-view>
+            <router-view name="basic"></router-view>
+        </div>
+    `
+}
+var AuthView = {
+    data: function () {
+        return {}
+    },
+    template: '<div>Auth</div>'
+}
+var BasicView = {
+    data: function () {
+        return {}
+    },
+    template: '<div>Basic</div>'
 }
 
 let router = new VueRouter({
@@ -24,13 +64,36 @@ let router = new VueRouter({
             path: '/upload',
             component: UploadView
         },
-        {
-            path: '/workbench/agent',
-            component: WorkbenchView
+        { // 嵌套路由：组件配置
+            path: '/workbench',
+            component: WorkbenchView,
+            children: [
+                {
+                    path: '',
+                    component: WorkbenchHomeView
+                },
+                {
+                    path: 'agent',
+                    component: AgentView
+                },
+                {
+                    path: 'parts',
+                    component: PartsView
+                }
+            ]
         },
-        {
-            path: '/setting/auth',
-            component: componentC
+        { // 嵌套命名视图：组件配置
+            path: '/setting',
+            component: SettingView,
+            children: [
+                {
+                    path: '',
+                    components: {
+                        auth: AuthView,
+                        basic: BasicView
+                    }
+                },
+            ]
         }
     ]
 })
