@@ -1,15 +1,15 @@
 
-var componentA = {
+var UploadView = {
     data: function () {
         return {}
     },
-    template: '<span>upload</span>'
+    template: '#upload-view'
 }
-var componentB = {
+var WorkbenchView = {
     data: function () {
         return {}
     },
-    template: '<span>workbench</span>'
+    template: '#workbench-view'
 }
 var componentC = {
     data: function () {
@@ -22,11 +22,11 @@ let router = new VueRouter({
     routes: [
         {
             path: '/upload',
-            component: componentA
+            component: UploadView
         },
         {
             path: '/workbench/agent',
-            component: componentB
+            component: WorkbenchView
         },
         {
             path: '/setting/auth',

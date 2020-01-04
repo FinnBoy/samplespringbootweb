@@ -103,6 +103,19 @@
 
     </div>
 
+    <template id="upload-view">
+        <div>Upload</div>
+    </template>
+
+    <template id="workbench-view">
+        <div>
+            <router-link to="/workbench/agent">Agent</router-link>
+            <router-link to="/workbench/other">Other</router-link>
+            <br/>
+            <router-view></router-view>
+        </div>
+    </template>
+
     <script src="../../../component/vue/vue.js"></script>
     <script src="../../../component/vue/vue-router.js"></script>
     <!-- 引入组件库 -->
