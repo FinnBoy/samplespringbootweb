@@ -31,6 +31,7 @@ var PartsView = {
     template: '<div>Parts</div>'
 }
 
+// 嵌套命名视图：组件配置
 var SettingView = {
     data: function () {
         return {}
@@ -81,7 +82,7 @@ let router = new VueRouter({
                 }
             ]
         },
-        {
+        { // 嵌套命名视图：组件配置
             path: '/setting',
             component: SettingView,
             children: [
