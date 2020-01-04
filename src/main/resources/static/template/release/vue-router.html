@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../../component/elementui/index.css">
+
+    <link rel="stylesheet" href="../../component/animate/animate.css">
+
+    <link rel="stylesheet" href="vue-router.css">
+</head>
+<body class="finn-theme-blue">
+    <div id="app" class="app-body">
+
+        <el-container>
+            <el-header height="50px">
+
+                <el-row>
+                    <el-col :span="1">
+                        <el-button plain icon="el-icon-s-unfold" @click="toggleCollapsed"
+                                   v-show="collapsed">
+                        </el-button>
+                        <span></span>
+                        <el-button plain icon="el-icon-s-fold" @click="toggleCollapsed"
+                                   v-show="!collapsed">
+                        </el-button>
+                    </el-col>
+                    <el-col :span="2">
+                        <el-image :src="'../../images/FinnBlue.png'" :fit="'fill'"></el-image>
+                    </el-col>
+                    <el-col :span="20">
+                        <span>&nbsp;</span>
+                    </el-col>
+                    <el-col :span="1">
+                        <el-dropdown>
+                            <span class="el-dropdown-link">
+                                <el-avatar src="../../images/user.png"></el-avatar>
+                            </span>
+                            <el-dropdown-menu slot="dropdown">
+                                <el-dropdown-item>黄金糕</el-dropdown-item>
+                                <el-dropdown-item>狮子头</el-dropdown-item>
+                                <el-dropdown-item disabled>双皮奶</el-dropdown-item>
+                                <el-dropdown-item divided>退出</el-dropdown-item>
+                            </el-dropdown-menu>
+                        </el-dropdown>
+                    </el-col>
+                </el-row>
+
+            </el-header>
+            <el-container>
+                <el-aside :width="asideWidth">
+
+                    <el-row>
+                        <el-col :span="24"><!-- #409EFF #ecf5ff #b3d8ff -->
+
+                            <el-menu
+                                    default-active="'2'"
+                                    :router="true"
+                                    :collapse-transition="false"
+                                    :collapse="collapsed">
+
+                                <template v-for="item in routes">
+                                    <template v-if="item.leaf">
+                                        <el-menu-item :index="item.path" :disabled="item.disabled" :key="item.id">
+                                            <i :class="item.icon"></i>
+                                            <span slot="title">{{item.name}}</span>
+                                        </el-menu-item>
+                                    </template>
+                                    <template v-else>
+                                        <el-submenu :index="item.path" :disabled="item.disabled" :key="item.id">
+                                            <template slot="title">
+                                                <i :class="item.icon"></i>
+                                                <span>{{item.name}}</span>
+                                            </template>
+                                            <template v-for="subitem in item.children">
+                                                <el-menu-item :index="item.path + subitem.path" :disabled="subitem.disabled" :key="subitem.id">
+                                                    <span slot="title">{{subitem.name}}</span>
+                                                </el-menu-item>
+                                            </template>
+                                        </el-submenu>
+                                    </template>
+                                </template>
+
+                            </el-menu>
+
+                        </el-col>
+                        <el-col :span="0">
+                            &nbsp;
+                        </el-col>
+                    </el-row>
+
+                </el-aside>
+                <el-main>
+
+                    <transition name="el-fade-in-linear">
+                        <router-view></router-view>
+                    </transition>
+
+                </el-main>
+            </el-container>
+        </el-container>
+
+    </div>
+
+    <template id="upload-view">
+        <div>Upload</div>
+    </template>
+
+    <template id="workbench-view">
+        <div>
+            <router-link to="/workbench/agent">Agent</router-link>
+            <router-link to="/workbench/other">Other</router-link>
+            <br/>
+            <router-view></router-view>
+        </div>
+    </template>
+
+    <script src="../../component/vue/vue.js"></script>
+    <script src="../../component/vue/vue-router.js"></script>
+    <!-- 引入组件库 -->
+    <script src="../../component/elementui/index.js"></script>
+
+    <script src="vue-router.js"></script>
+</body>
+</html>
