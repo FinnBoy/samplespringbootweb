@@ -58,44 +58,85 @@ var BasicView = {
     template: '<div>Basic</div>'
 }
 
-let router = new VueRouter({
-    routes: [
-        {
-            path: '/upload',
-            component: UploadView
+/**************************************************************
+ * 路由配置
+ **************************************************************/
+var routes = [
+    {
+        path: '/upload',
+        component: UploadView,
+        meta: {
+            id: 1,
+            leaf: true,
+            disabled: false,
+            icon: 'el-icon-tickets',
+            name: '待上传',
         },
-        { // 嵌套路由：组件配置
-            path: '/workbench',
-            component: WorkbenchView,
-            children: [
-                {
-                    path: '',
-                    component: WorkbenchHomeView
-                },
-                {
-                    path: 'agent',
-                    component: AgentView
-                },
-                {
-                    path: 'parts',
-                    component: PartsView
+    },
+    { // 嵌套路由：组件配置
+        path: '/workbench',
+        component: WorkbenchView,
+        meta: {
+            id: 2,
+            leaf: false,
+            disabled: false,
+            icon: 'el-icon-menu',
+            name: '工作台',
+        },
+        children: [
+            {
+                path: '',
+                component: WorkbenchHomeView,
+            },
+            {
+                path: 'agent',
+                component: AgentView,
+                meta: {
+                    id: 21,
+                    disabled: false,
+                    name: '代理商',
                 }
-            ]
+            },
+            {
+                path: 'parts',
+                component: PartsView,
+                meta: {
+                    id: 22,
+                    disabled: false,
+                    name: '零部件',
+                }
+            }
+        ]
+    },
+    { // 嵌套命名视图：组件配置
+        path: '/setting',
+        component: SettingView,
+        meta: {
+            id: 3,
+            leaf: false,
+            disabled: false,
+            icon: 'el-icon-setting',
+            name: '设定',
         },
-        { // 嵌套命名视图：组件配置
-            path: '/setting',
-            component: SettingView,
-            children: [
-                {
-                    path: '',
-                    components: {
-                        auth: AuthView,
-                        basic: BasicView
-                    }
+        children: [
+            {
+                path: 'total',
+                components: {
+                    auth: AuthView,
+                    basic: BasicView
                 },
-            ]
-        }
-    ]
+                meta: {
+                    id: 31,
+                    disabled: false,
+                    name: '基础与权限管理',
+                }
+            },
+        ]
+    }
+];
+
+let router = new VueRouter({
+    routes: routes
 })
 
 new Vue({
@@ -107,40 +148,7 @@ new Vue({
             show: true,
             drawer: false,
             asideWidth: '50px',
-            routes: [
-                {
-                    id: 1,
-                    leaf: true,
-                    disabled: false,
-                    icon: 'el-icon-tickets',
-                    name: '待上传',
-                    path: '/upload'
-                },
-                {
-                    id: 2,
-                    leaf: false,
-                    disabled: false,
-                    icon: 'el-icon-menu',
-                    name: '工作台',
-                    path: '/workbench',
-                    children: [
-                        {id: 21, path: '/agent', disabled: false, name: '代理商'},
-                        {id: 22, path: '/parts', disabled: false, name: '零部件'}
-                    ]
-                },
-                {
-                    id: 3,
-                    leaf: false,
-                    disabled: false,
-                    icon: 'el-icon-setting',
-                    name: '设定',
-                    path: '/setting',
-                    children: [
-                        {id: 31, path: '/auth', disabled: false, name: '权限管理'},
-                        {id: 32, path: '/basic', disabled: false, name: '基础设定'}
-                    ]
-                },
-            ],
+            routes: routes,
         }
     },
     methods: {
