@@ -61,22 +61,30 @@
                                     :collapse="collapsed">
 
                                 <template v-for="item in routes">
-                                    <template v-if="item.leaf">
-                                        <el-menu-item :index="item.path" :disabled="item.disabled" :key="item.id">
-                                            <i :class="item.icon"></i>
-                                            <span slot="title">{{item.name}}</span>
+                                    <template v-if="item.meta.leaf">
+                                        <el-menu-item :index="item.path"
+                                                      :disabled="item.meta.disabled"
+                                                      :key="item.meta.id">
+                                            <i :class="item.meta.icon"></i>
+                                            <span slot="title">{{item.meta.name}}</span>
                                         </el-menu-item>
                                     </template>
                                     <template v-else>
-                                        <el-submenu :index="item.path" :disabled="item.disabled" :key="item.id">
+                                        <el-submenu :index="item.path"
+                                                    :disabled="item.meta.disabled"
+                                                    :key="item.meta.id">
                                             <template slot="title">
-                                                <i :class="item.icon"></i>
-                                                <span>{{item.name}}</span>
+                                                <i :class="item.meta.icon"></i>
+                                                <span>{{item.meta.name}}</span>
                                             </template>
                                             <template v-for="subitem in item.children">
-                                                <el-menu-item :index="item.path + subitem.path" :disabled="subitem.disabled" :key="subitem.id">
-                                                    <span slot="title">{{subitem.name}}</span>
-                                                </el-menu-item>
+                                                <template v-if="'' != subitem.path">
+                                                    <el-menu-item :index="item.path + '/' + subitem.path"
+                                                                  :disabled="subitem.meta.disabled"
+                                                                  :key="subitem.meta.id">
+                                                        <span slot="title">{{subitem.meta.name}}</span>
+                                                    </el-menu-item>
+                                                </template>
                                             </template>
                                         </el-submenu>
                                     </template>
