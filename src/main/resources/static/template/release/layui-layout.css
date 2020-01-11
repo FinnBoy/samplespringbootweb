@@ -62,6 +62,32 @@
     left: 220px;
 }
 
+
+.finn-collapsed .layui-layout-admin .layui-layout-left {
+    left: 60px;
+}
+.finn-collapsed .layui-layout-admin .layui-side {
+    width: 60px;
+}
+.finn-collapsed .layui-layout-admin .layui-body {
+    left: 60px;
+}
+.finn-collapsed .layui-layout-admin .layui-footer {
+    left: 60px;
+}
+.finn-collapsed .layui-side-menu .layui-nav>.layui-nav-itemed>a {
+    background: rgba(0,0,0,.3);
+}
+.finn-collapsed .layui-side-menu .layui-nav-item cite
+, .finn-collapsed .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child
+, .finn-collapsed .layui-side-menu .layui-nav>.layui-nav-item>a .layui-nav-more {
+    display: none;
+}/*
+.finn-collapsed .layui-layout-admin .layui-nav>.layui-nav-item>a>cite {
+    display: none;
+}*/
+
+
 /***************************************************************************************************
  * theme
  ***************************************************************************************************/
