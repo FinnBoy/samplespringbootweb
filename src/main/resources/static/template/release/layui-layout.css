@@ -50,6 +50,9 @@
 .layui-side-menu .layui-nav .layui-nav-more {
     right: 15px;
 }
+.layui-layout-admin .layui-side .layui-nav .layui-this:after, .layui-layout-admin .layui-side .layui-nav-bar {
+    width: 3px;
+}
 
 .layui-layout-admin .layui-body {
     top: 50px;
@@ -96,4 +99,7 @@
 , .layui-nav-tree .layui-this>a
 , .layui-nav-tree .layui-this>a:hover {
     background-color: #4E5465; /* #4E5465 #2F4056 */
+}
+.layui-layout-admin .layui-side .layui-nav .layui-this:after, .layui-layout-admin .layui-side .layui-nav-bar {
+    background-color: #fff;
 }
