@@ -54,8 +54,8 @@
                 <img src="../../images/FinnGrey.png" class="layui-nav-img" style="width: 100px; margin-left: 20px;">
             </div>
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-                <li class="layui-nav-item layui-nav-itemed">
+            <ul class="layui-nav layui-nav-tree" lay-shrink="all" lay-filter="side-menu">
+                <li class="layui-nav-item layui-nav-itemed" lay-unselect>
                     <a class="" href="javascript:;">
                         <i class="layui-icon layui-icon-home"></i>
                         <cite>主页</cite>
@@ -67,7 +67,7 @@
                         <dd><a href="">超链接</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item">
+                <li class="layui-nav-item" lay-unselect>
                     <a href="javascript:;">
                         <i class="layui-icon layui-icon-set"></i>
                         <cite>设定</cite>

@@ -219,6 +219,10 @@
     -webkit-animation-name: showSideMenuAttach;
     animation-name: showSideMenuAttach;
 }
+.finn-do-spread .animated {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+}
 
 
 /***************************************************************************************************
