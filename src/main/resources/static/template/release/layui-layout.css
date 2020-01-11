@@ -1,4 +1,31 @@
+/*
+.finn-layout .layui-layout-admin {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.finn-layout .layui-header {
+    flex: 1;
+}
+.finn-layout .layui-side {
+    flex: 0 0 200px;
+}
+.finn-layout .layui-body {
+    flex: 1;
+}
 
+.finn-body .layui-layout-admin {
+    display: flex;
+}
+.finn-body .layui-side {
+    flex: 0 0 60px;
+    position: relative;
+}
+.finn-body .layui-body {
+    flex: 1;
+    position: relative;
+}
+*/
 /***************************************************************************************************
  * layout
  ***************************************************************************************************/
@@ -21,16 +48,13 @@
 .layui-nav-child {
     top: 55px;
 }
-.layui-layout-left {
-    left: 220px;/**/
-}
+
 .layui-nav-tree {
     width: 220px;/**/
 }
 
 .layui-layout-admin .layui-side {
     top: 0;/*50px*/
-    width: 220px;/**/
     z-index: 1001;
 }
 .layui-side-menu .layui-side-scroll {
@@ -56,36 +80,145 @@
 
 .layui-layout-admin .layui-body {
     top: 50px;
-    left: 220px;/**/
-}
-.layui-layout-admin .layui-footer {
-    left: 220px;
 }
 
 
-.finn-collapsed .layui-layout-admin .layui-layout-left {
-    left: 60px;
-}
-.finn-collapsed .layui-layout-admin .layui-side {
+/***************************************************************************************************
+ * SideBar finn-menu-shrink
+ ***************************************************************************************************/
+.finn-menu-shrink .layui-side {
     width: 60px;
 }
-.finn-collapsed .layui-layout-admin .layui-body {
+.finn-menu-shrink .layui-layout-left {
     left: 60px;
 }
-.finn-collapsed .layui-layout-admin .layui-footer {
+.finn-menu-shrink .layui-body {
     left: 60px;
 }
-.finn-collapsed .layui-side-menu .layui-nav>.layui-nav-itemed>a {
+.finn-menu-shrink .layui-footer {
+    left: 60px;
+}
+.finn-item-shrink .layui-side-menu .layui-nav>.layui-nav-itemed>a {
     background: rgba(0,0,0,.3);
 }
-.finn-collapsed .layui-side-menu .layui-nav-item cite
-, .finn-collapsed .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child
-, .finn-collapsed .layui-side-menu .layui-nav>.layui-nav-item>a .layui-nav-more {
+
+.finn-item-shrink .layui-side-menu .layui-nav-item cite
+, .finn-item-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child
+, .finn-item-shrink .layui-side-menu .layui-nav>.layui-nav-item>a .layui-nav-more {
     display: none;
-}/*
-.finn-collapsed .layui-layout-admin .layui-nav>.layui-nav-item>a>cite {
-    display: none;
-}*/
+}
+
+
+/***************************************************************************************************
+ * Animation
+ ***************************************************************************************************/
+/* side */
+@-webkit-keyframes hideSideMenu {
+  from {
+    width: 220px;
+  }
+  to {
+    width: 60px;
+  }
+}
+@keyframes hideSideMenu {
+  from {
+    width: 220px;
+  }
+  to {
+    width: 60px;
+  }
+}
+
+@-webkit-keyframes showSideMenu {
+  from {
+    width: 60px;
+  }
+  to {
+    width: 220px;
+  }
+}
+@keyframes showSideMenu {
+  from {
+    width: 60px;
+  }
+  to {
+    width: 220px;
+  }
+}
+
+/* content */
+@-webkit-keyframes hideSideMenuAttach {
+  from {
+    left: 220px;
+  }
+  to {
+    left: 60px;
+  }
+}
+@keyframes hideSideMenuAttach {
+  from {
+    left: 220px;
+  }
+  to {
+    left: 60px;
+  }
+}
+
+@-webkit-keyframes showSideMenuAttach {
+  from {
+    left: 60px;
+  }
+  to {
+    left: 220px;
+  }
+}
+@keyframes showSideMenuAttach {
+  from {
+    left: 60px;
+  }
+  to {
+    left: 220px;
+  }
+}
+
+.finn-do-shrink .layui-side {
+    -webkit-animation-name: hideSideMenu;
+    animation-name: hideSideMenu;
+}
+.finn-do-shrink .layui-layout-left {
+    -webkit-animation-name: hideSideMenuAttach;
+    animation-name: hideSideMenuAttach;
+}
+.finn-do-shrink .layui-body {
+    -webkit-animation-name: hideSideMenuAttach;
+    animation-name: hideSideMenuAttach;
+}
+.finn-do-shrink .layui-footer {
+    -webkit-animation-name: hideSideMenuAttach;
+    animation-name: hideSideMenuAttach;
+}
+.finn-do-shrink .animated {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+}
+
+.finn-do-spread .layui-side {
+    -webkit-animation-name: showSideMenu;
+    animation-name: showSideMenu;
+}
+.finn-do-spread .layui-layout-left {
+    -webkit-animation-name: showSideMenuAttach;
+    animation-name: showSideMenuAttach;
+}
+.finn-do-spread .layui-body {
+    -webkit-animation-name: showSideMenuAttach;
+    animation-name: showSideMenuAttach;
+}
+.finn-do-spread .layui-footer {
+    -webkit-animation-name: showSideMenuAttach;
+    animation-name: showSideMenuAttach;
+}
 
 
 /***************************************************************************************************

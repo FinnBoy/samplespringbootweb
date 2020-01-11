@@ -9,21 +9,36 @@ layui.use(['element', 'layer', 'form', 'table', 'tree', 'jquery'], function() {
     var tree = layui.tree;
     var $ = layui.$;
 
-    $('#hideBtn').hide();
+    var $hideBtn = $('#hideBtn');
+    var $showBtn = $('#showBtn');
+    var $side = $('.layui-side');
+    var $body = $('.layui-body');
+    var $layout = $('.layui-layout');
 
-    $('#showBtn').click(function () {
-        $('body').removeClass('finn-collapsed');
+    $hideBtn.hide();
+
+    $showBtn.click(function () {
+        $layout.removeClass('finn-menu-shrink');
+        $layout.removeClass('finn-item-shrink');
+
+        $layout.addClass('finn-do-spread');
+        $layout.removeClass('finn-do-shrink');
+
         $(this).hide();
-        $('#hideBtn').show();
+        $hideBtn.show();
         element.render('nav', 'head');
     });
 
-    $('#hideBtn').click(function () {
-        $('body').addClass('finn-collapsed');
+    $hideBtn.click(function () {
+        $layout.removeClass('finn-do-spread');
+        $layout.addClass('finn-do-shrink');
+
         $(this).hide();
-        $('#showBtn').show();
+        $showBtn.show();
         element.render('nav', 'head');
+
+        $layout.addClass('finn-item-shrink');
     });
 
-    $('#showBtn').trigger('click');
+    //$('#showBtn').trigger('click');
 });
