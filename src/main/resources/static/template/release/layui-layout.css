@@ -42,6 +42,12 @@
     height: 2px;
 }
 
+.layui-nav.layui-layout-right .layui-nav-item a {
+    padding: 0 10px;
+}
+.layui-nav.layui-layout-right .layui-nav-item a .layui-nav-img {
+    margin-right: 0;
+}
 .layui-nav .layui-nav-item {
     line-height: 50px;
 }
