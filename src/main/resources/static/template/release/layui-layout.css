@@ -98,10 +98,15 @@
 .finn-menu-shrink .layui-footer {
     left: 60px;
 }
+
+/*
+.finn-item-shrink .layui-side-menu .layui-logo {
+    background-image: url("../../images/FinnGrey.png");
+    width: 60px;
+}*/
 .finn-item-shrink .layui-side-menu .layui-nav>.layui-nav-itemed>a {
     background: rgba(0,0,0,.3);
 }
-
 .finn-item-shrink .layui-side-menu .layui-nav-item cite
 , .finn-item-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child
 , .finn-item-shrink .layui-side-menu .layui-nav>.layui-nav-item>a .layui-nav-more {
