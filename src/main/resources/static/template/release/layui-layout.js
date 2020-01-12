@@ -138,6 +138,8 @@ layui.use(['element', 'layer', 'form', 'table', 'tree', 'laytpl', 'jquery'], fun
             if (path) {
                 var $page = $content.find('.finn-page');
                 $page.load(path+'.html', function () {
+                    // $.getScript(path+'.js');
+                    // $page.find('.finn-import-script').load();
                     // form.render();
                 });
             }

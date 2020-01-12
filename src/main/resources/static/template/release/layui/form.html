@@ -229,4 +229,14 @@
         </form>
     </div>
 </div>
-<script src="layui/form.js"></script>
+<script>
+layui.extend({
+    formPage: '/demo/resources/template/release/layui/form'
+});
+
+layui.use(['formPage'], function() {
+    var formPage = layui.formPage;
+    // formPage.exec();
+});
+
+</script>
