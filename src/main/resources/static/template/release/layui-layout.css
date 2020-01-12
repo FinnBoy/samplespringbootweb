@@ -42,6 +42,9 @@
     height: 2px;
 }
 
+.layui-nav.layui-layout-left, .layui-nav.layui-layout-right {
+    padding: 0 10px;
+}
 .layui-nav.layui-layout-right .layui-nav-item a {
     padding: 0 10px;
 }
@@ -276,4 +279,9 @@
 }
 .layui-layout-admin .layui-side .layui-nav .layui-this:after, .layui-layout-admin .layui-side .layui-nav-bar {
     background-color: #fff;
+}
+
+.layui-layout-admin .layui-footer {
+    background-color: #fff;
+    box-shadow: 0 -1px 2px 0 rgba(0,0,0,.05);
 }
