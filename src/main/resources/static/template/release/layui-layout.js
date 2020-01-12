@@ -47,30 +47,37 @@ layui.use(['element', 'layer', 'form', 'table', 'tree', 'laytpl', 'jquery'], fun
 
     var menuList = [
         {
+            id: '1',
             icon: 'layui-icon-template',
             title: '页面',
             children: [
                 {
+                    id: '11',
                     title: '页面一'
                 },
                 {
+                    id: '12',
                     title: '页面二'
                 }
             ]
         },
         {
+            id: '2',
             icon: 'layui-icon-set',
             title: '设定',
             children: [
                 {
+                    id: '21',
                     title: '系统设定'
                 },
                 {
+                    id: '22',
                     title: '我的设定'
                 }
             ]
         },
         {
+            id: '3',
             icon: 'layui-icon-auz',
             title: '授权'
         }
@@ -78,12 +85,17 @@ layui.use(['element', 'layer', 'form', 'table', 'tree', 'laytpl', 'jquery'], fun
 
     var $template = $('#side-menu-template')[0].innerHTML;
     laytpl($template).render({menuList: menuList}, function(html) {
-        var $sample = $('.layui-side').find('.layui-nav');
+        var $sample = $side.find('.layui-nav');
         var $container = $sample.parent();
 
         $sample.remove();
         $container.append(html);
 
         element.render('nav', 'side-menu');
+
+        var $nav = $side.find('.layui-nav');
+        $.each(menuList, function (i, item) {
+
+        });
     });
 });

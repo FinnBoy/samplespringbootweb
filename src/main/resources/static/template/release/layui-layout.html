@@ -132,14 +132,14 @@
         <li class="layui-nav-item">
             {{#  } }}
 
-            <a class="" href="javascript:void(0)">
+            <a class="" href="javascript:void(0)" data-id="{{ item.id }}">
                 <i class="layui-icon {{ item.icon }}"></i>
-                <cite>{{ item.title }}</cite>
+                <cite>{{= item.title }}</cite>
             </a>
             {{#  if (item.children && item.children.length > 0) { }}
             <dl class="layui-nav-child">
                 {{# layui.each(item.children, function(i, childItem) { }}
-                <dd><a href="javascript:void(0)">{{ childItem.title }}</a></dd>
+                <dd><a href="javascript:void(0)" data-id="{{ childItem.id }}">{{= childItem.title }}</a></dd>
                 {{#  }) }}
             </dl>
             {{#  } }}
