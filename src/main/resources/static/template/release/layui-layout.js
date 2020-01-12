@@ -40,5 +40,8 @@ layui.use(['element', 'layer', 'form', 'table', 'tree', 'jquery'], function() {
         $layout.addClass('finn-item-shrink');
     });
 
-    //$('#showBtn').trigger('click');
+    $('body').on('click', '.finn-item-shrink .layui-side', function () {
+        $showBtn.trigger('click');
+    });
+
 });
