@@ -15,7 +15,7 @@
         <div class="layui-logo">layui 后台布局</div>
           -->
         <!-- 头部区域（可配合layui已有的水平导航） -->
-        <ul class="layui-nav layui-layout-left animated" lay-filter="head">
+        <ul class="layui-nav layui-layout-left animated" lay-filter="head-left-menu">
             <li class="layui-nav-item" id="showBtn">
                 <a href="javascript:;" title="侧边伸缩"><i class="layui-icon layui-icon-shrink-right"></i></a>
             </li>
@@ -120,6 +120,33 @@
         底部固定区域
     </div>
 </div>
+
+<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+<script id="side-menu-template" type="text/html">
+    <ul class="layui-nav layui-nav-tree" lay-shrink="all" lay-filter="side-menu">
+        {{# layui.each(d.menuList, function(index, item) { }}
+
+            {{# if (item.children && item.children.length > 0) { }}
+        <li class="layui-nav-item" lay-unselect>
+            {{#  } else { }}
+        <li class="layui-nav-item">
+            {{#  } }}
+
+            <a class="" href="javascript:void(0)">
+                <i class="layui-icon {{ item.icon }}"></i>
+                <cite>{{ item.title }}</cite>
+            </a>
+            {{#  if (item.children && item.children.length > 0) { }}
+            <dl class="layui-nav-child">
+                {{# layui.each(item.children, function(i, childItem) { }}
+                <dd><a href="javascript:void(0)">{{ childItem.title }}</a></dd>
+                {{#  }) }}
+            </dl>
+            {{#  } }}
+        </li>
+        {{#  }) }}
+    </ul>
+</script>
 
 <script src="../../component/layui/layui.js"></script>
 <script src="layui-layout.js"></script>
