@@ -11,7 +11,10 @@ layui.use(['element', 'layer', 'form', 'table', 'tree', 'laytpl', 'jquery'], fun
     var $ = layui.$;
 
     jQuery.extend({
-      pages: {}
+      app: {
+        base: '/demo/resources',
+        pages: {}
+      }
     });
 
     var $hideBtn = $('#hideBtn');

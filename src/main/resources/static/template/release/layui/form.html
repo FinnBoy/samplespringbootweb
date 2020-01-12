@@ -230,17 +230,17 @@
     </div>
 </div>
 <script>
-if (!$.pages.form) {
+if (!$.app.pages.form) {
     layui.extend({
-        formPage: '/demo/resources/template/release/layui/form'
+        formPage: $.app.base + '/template/release/layui/form'
     });
 }
 
 layui.use(['formPage'], function() {
     var formPage = layui.formPage;
 
-    if (!$.pages.form) {
-        $.pages.form = formPage;
+    if (!$.app.pages.form) {
+        $.app.pages.form = formPage;
     }
 
     formPage.exec();
