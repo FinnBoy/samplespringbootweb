@@ -7,11 +7,11 @@ layui.define(['element', 'layer', 'form', 'jquery'], function (exports) {
     var form = layui.form;
     var $ = layui.$;
 
-    form.render();
+    // form.render();
 
     var obj = {
         exec: function () {
-            // form.render();
+            form.render();
         }
     };
 

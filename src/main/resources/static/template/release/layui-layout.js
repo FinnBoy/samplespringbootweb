@@ -10,6 +10,10 @@ layui.use(['element', 'layer', 'form', 'table', 'tree', 'laytpl', 'jquery'], fun
     var laytpl = layui.laytpl;
     var $ = layui.$;
 
+    jQuery.extend({
+      pages: {}
+    });
+
     var $hideBtn = $('#hideBtn');
     var $showBtn = $('#showBtn');
     var $side = $('.layui-side');
