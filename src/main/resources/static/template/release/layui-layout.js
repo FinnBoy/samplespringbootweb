@@ -54,11 +54,13 @@ layui.use(['element', 'layer', 'form', 'table', 'tree', 'laytpl', 'jquery'], fun
             children: [
                 {
                     id: '11',
-                    title: '页面一'
+                    title: '表单样例',
+                    path: 'layui/form'
                 },
                 {
                     id: '12',
-                    title: '页面二'
+                    title: '页面二',
+                    path: ''
                 }
             ]
         },
@@ -69,18 +71,21 @@ layui.use(['element', 'layer', 'form', 'table', 'tree', 'laytpl', 'jquery'], fun
             children: [
                 {
                     id: '21',
-                    title: '系统设定'
+                    title: '系统设定',
+                    path: ''
                 },
                 {
                     id: '22',
-                    title: '我的设定'
+                    title: '我的设定',
+                    path: ''
                 }
             ]
         },
         {
             id: '3',
             icon: 'layui-icon-auz',
-            title: '授权'
+            title: '授权',
+            path: ''
         }
     ];
 
@@ -123,9 +128,23 @@ layui.use(['element', 'layer', 'form', 'table', 'tree', 'laytpl', 'jquery'], fun
 
         var $nav = $side.find('.layui-nav');
         $nav.on('click', 'a', function () {
+            var containsSubMenu = $(this).parent().find('dl').length > 0;
+            var isMenu = $(this).parent().find('li');
+            if (containsSubMenu) {
+                return;
+            }
+
+            var path = $(this).data('href');
+            if (path) {
+                var $page = $content.find('.finn-page');
+                $page.load(path+'.html', function () {
+                    // form.render();
+                });
+            }
+
             var datas = [];
 
-            if (!$(this).parent().is('li')) {
+            if (!isMenu) {
                 var $li = $(this).parents('li');
                 if (1 === $li.length) {
                     var $a = $li.children('a');
