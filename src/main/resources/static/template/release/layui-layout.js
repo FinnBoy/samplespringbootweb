@@ -15,6 +15,7 @@ layui.use(['element', 'layer', 'form', 'table', 'tree', 'laytpl', 'jquery'], fun
     var $side = $('.layui-side');
     var $body = $('.layui-body');
     var $layout = $('.layui-layout');
+    var $content = $('.finn-body-content');
 
     $hideBtn.hide();
 
@@ -83,6 +84,33 @@ layui.use(['element', 'layer', 'form', 'table', 'tree', 'laytpl', 'jquery'], fun
         }
     ];
 
+    var renderBreadcrumb = function () {
+        var args = arguments;
+        if (!args) {
+            return;
+        }
+        if (0 === args.length) {
+            return;
+        }
+        var length = args.length;
+        var pathsLength = length - 1;
+        var paths = [];
+        for (var i = 0; i < pathsLength; i++) {
+            paths.push(args[i]);
+        }
+        var data = {
+            paths: paths,
+            current: args[length - 1]
+        }
+        var $template = $('#breadcrumb-template')[0].innerHTML;
+        laytpl($template).render(data, function(html) {
+            var $c = $content.children('.layui-card').find('.layui-card-header');
+            $c.empty();
+            $c.append(html);
+            element.render('breadcrumb');
+        });
+    }
+
     var $template = $('#side-menu-template')[0].innerHTML;
     laytpl($template).render({menuList: menuList}, function(html) {
         var $sample = $side.find('.layui-nav');
@@ -94,8 +122,32 @@ layui.use(['element', 'layer', 'form', 'table', 'tree', 'laytpl', 'jquery'], fun
         element.render('nav', 'side-menu');
 
         var $nav = $side.find('.layui-nav');
-        $.each(menuList, function (i, item) {
+        $nav.on('click', 'a', function () {
+            var datas = [];
 
+            if (!$(this).parent().is('li')) {
+                var $li = $(this).parents('li');
+                if (1 === $li.length) {
+                    var $a = $li.children('a');
+                    datas.push({
+                        title: $a.find('cite').text()
+                    });
+                }
+            }
+
+            var $dd = $(this).parent().parents('dd');
+            $dd.each(function () {
+                var $a = $(this).children('a');
+                datas.push({
+                    title: $a.find('cite').text()
+                });
+            });
+
+            datas.push({
+                title: $(this).find('cite').text()
+            });
+
+            renderBreadcrumb.apply(this, datas);
         });
     });
 });

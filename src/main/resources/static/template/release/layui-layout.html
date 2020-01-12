@@ -94,9 +94,9 @@
             <div class="layui-card">
                 <div class="layui-card-header">
                     <span class="layui-breadcrumb">
-                        <a href="javascript:;">首页</a>
+                        <a href="javascript:;">首页</a><!--
                         <a href="javascript:;">页面1</a>
-                        <a><cite>正文</cite></a>
+                        <a><cite>正文</cite></a>-->
                     </span>
                 </div>
             </div>
@@ -139,13 +139,28 @@
             {{#  if (item.children && item.children.length > 0) { }}
             <dl class="layui-nav-child">
                 {{# layui.each(item.children, function(i, childItem) { }}
-                <dd><a href="javascript:void(0)" data-id="{{ childItem.id }}">{{= childItem.title }}</a></dd>
+                <dd>
+                    <a href="javascript:void(0)" data-id="{{ childItem.id }}">
+                        <cite>{{= childItem.title }}</cite>
+                    </a>
+                </dd>
                 {{#  }) }}
             </dl>
             {{#  } }}
         </li>
         {{#  }) }}
     </ul>
+</script>
+
+<!-- 面包屑导航区域 -->
+<script id="breadcrumb-template" type="text/html">
+    <span class="layui-breadcrumb">
+        <a href="javascript:;">首页</a>
+        {{# layui.each(d.paths, function(index, item) { }}
+        <a href="javascript:;">{{= item.title }}</a>
+        {{#  }) }}
+        <a><cite>{{= d.current.title }}</cite></a>
+    </span>
 </script>
 
 <script src="../../component/layui/layui.js"></script>
