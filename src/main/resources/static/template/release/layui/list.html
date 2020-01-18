@@ -3,15 +3,18 @@
 .layui-form.layui-fluid {
     padding: 0;
 }*/
-.layui-fluid {
+.layui-card-body .layui-fluid {
     padding: 0;
 }
 
-.layui-col-space10 {
+.layui-form .layui-col-space10 {
     margin: 0;
 }
 
 .layui-row.layui-form-item {
+    margin: 0;
+}
+.layui-row.layui-form-item+.layui-form-item {
     margin: 10px 0 0 0;
 }
 
@@ -92,7 +95,7 @@
 
 </style>
 <div class="layui-card">
-
+    <div class="layui-card-header">查询</div>
     <div class="layui-card-body">
 
         <form class="layui-form layui-form-pane layui-fluid" action="" lay-filter="search-form-group">
