@@ -66,8 +66,8 @@ layui.use(['element', 'layer', 'form', 'table', 'tree', 'laytpl', 'jquery'], fun
                 },
                 {
                     id: '12',
-                    title: '页面二',
-                    path: ''
+                    title: '查询样例',
+                    path: 'layui/list'
                 }
             ]
         },
