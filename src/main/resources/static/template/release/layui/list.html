@@ -1,7 +1,18 @@
 <style>
-
+/*
 .layui-form.layui-fluid {
     padding: 0;
+}*/
+.layui-fluid {
+    padding: 0;
+}
+
+.layui-col-space10 {
+    margin: 0;
+}
+
+.layui-row.layui-form-item {
+    margin: 10px 0 0 0;
 }
 
 .layui-row.layui-form-item .layui-inline {
@@ -62,14 +73,25 @@
     height: 28px;
 }
 
+.layui-form-item .layui-btn-container.layui-btn-right {
+    float: right;
+}
+.layui-form-item>.layui-inline:after {
+    clear: both;
+    content: '\20';
+}
+.layui-form-item .layui-btn-container.layui-btn-right .layui-btn {
+    margin-right: 0;
+}
+.layui-form-item .layui-btn-container.layui-btn-right .layui-btn+.layui-btn {
+    margin-left: 10px;
+}
 .layui-form-item .layui-btn {
     margin-bottom: 0;
 }
 
 </style>
 <div class="layui-card">
-
-    <div class="layui-card-header">查询</div>
 
     <div class="layui-card-body">
 
@@ -125,40 +147,6 @@
                     </div>
                 </div>
                 <div class="layui-inline layui-col-md4">
-                    <label class="layui-form-label">复选框</label>
-                    <div class="layui-input-inline">
-                        <input type="checkbox" name="likeX[write]" title="写作">
-                        <input type="checkbox" name="likeX[read]" title="阅读" checked="">
-                        <!-- <input type="checkbox" name="like[game]" title="游戏"> -->
-                    </div>
-                </div>
-            </div>
-            <!-- item -->
-            <div class="layui-form-item layui-row layui-col-space10" pane>
-                <div class="layui-inline layui-col-md4">
-                    <label class="layui-form-label">分组选择框</label>
-                    <div class="layui-input-inline">
-                        <select name="quizX" lay-search>
-                            <option value="">请选择问题</option>
-                            <optgroup label="城市记忆">
-                                <option value="你工作的第一个城市">你工作的第一个城市</option>
-                            </optgroup>
-                            <optgroup label="学生时代">
-                                <option value="你的工号">你的工号</option>
-                                <option value="你最喜欢的老师">你最喜欢的老师</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                </div>
-                <div class="layui-inline layui-col-md4">
-                    <label class="layui-form-label">单选框</label>
-                    <div class="layui-input-inline">
-                        <input type="radio" name="sexX" value="nan" title="男">
-                        <input type="radio" name="sexX" value="nv" title="女" checked>
-                        <!-- <input type="radio" name="sex" value="" title="中性" disabled> -->
-                    </div>
-                </div>
-                <div class="layui-inline layui-col-md4">
                     <label class="layui-form-label">范围</label>
                     <div class="layui-input-inline layui-input-range">
                         <input type="text" name="price_min" placeholder="￥" autocomplete="off" class="layui-input">
@@ -171,8 +159,8 @@
             </div>
             <!-- item -->
             <div class="layui-form-item layui-row layui-col-space10">
-                <div class="layui-inline layui-col-md2 layui-col-md-offset10">
-                    <div class="layui-btn-container">
+                <div class="layui-inline layui-col-md3 layui-col-md-offset9">
+                    <div class="layui-btn-container layui-btn-right">
                         <button class="layui-btn" lay-submit="" lay-filter="component-form-demo1">查询</button>
                         <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                     </div>
@@ -181,7 +169,14 @@
 
         </form>
 
-        <table id="demoTable"></table>
+        <div class="layui-fluid">
+            <!-- item -->
+            <div class="layui-row">
+                <div class="layui-col-md12">
+                    <table id="demoTable"></table>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>
