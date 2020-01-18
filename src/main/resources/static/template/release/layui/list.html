@@ -1,0 +1,329 @@
+<style>
+
+.layui-form.layui-fluid {
+    padding: 0;
+}
+
+.layui-row.layui-form-item .layui-inline {
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+.layui-form-pane .layui-form-radio
+, .layui-form-pane .layui-form-switch
+, .layui-form-pane .layui-form-checkbox
+, .layui-form-pane .layui-form-checkbox[lay-skin=primary] {
+    margin: 2px 0 2px 10px;
+}
+
+.layui-form-pane .layui-form-mid + .layui-input-inline
+, .layui-form-pane .layui-form-item[pane] .layui-form-mid + .layui-input-inline {
+    margin-left: 0;
+}
+
+.layui-form-item .layui-input-range {
+    width: 120px;
+    margin-right: 0;
+}
+.layui-form-item .layui-form-mid {
+    padding: 0!important;
+    line-height: 28px;
+    margin: 0 10px;
+}
+
+.layui-form-item .layui-form-checkbox {
+    height: 24px;
+    line-height: 24px;
+}
+.layui-form-item .layui-form-checkbox i {
+    height: 22px;
+    line-height: 22px;
+}
+
+.layui-form-item .layui-form-checkbox[lay-skin=primary] {
+    height: 24px !important;
+    line-height: 24px !important;
+}
+.layui-form-item .layui-form-checkbox[lay-skin=primary] span {
+    height: 24px;
+    line-height: 24px;
+}
+.layui-form-item .layui-form-checkbox[lay-skin=primary] i {
+    height: 16px;
+    line-height: 16px;
+    margin: 3px 0;
+}
+
+.layui-form-item .layui-form-radio {
+    line-height: 24px;
+}
+
+.layui-input, .layui-select, .layui-textarea {
+    height: 28px;
+}
+
+.layui-form-item .layui-btn {
+    margin-bottom: 0;
+}
+
+</style>
+<div class="layui-card">
+
+    <div class="layui-card-header">查询</div>
+
+    <div class="layui-card-body">
+
+        <form class="layui-form layui-form-pane layui-fluid" action="" lay-filter="search-form-group">
+            <!-- item -->
+            <div class="layui-form-item layui-row layui-col-space10" pane>
+                <div class="layui-inline layui-col-md4">
+                    <label class="layui-form-label">开关-默认开</label>
+                    <div class="layui-input-inline">
+                        <input type="checkbox" checked="" name="open" lay-skin="switch" lay-text="ON|OFF">
+                    </div>
+                </div>
+                <div class="layui-inline layui-col-md4">
+                    <label class="layui-form-label">复选框</label>
+                    <div class="layui-input-inline">
+                        <input type="checkbox" name="like[write]" title="写作">
+                        <input type="checkbox" name="like[read]" title="阅读" checked="">
+                        <!-- <input type="checkbox" name="like[game]" title="游戏"> -->
+                    </div>
+                </div>
+                <div class="layui-inline layui-col-md4">
+                    <label class="layui-form-label">原始复选框</label>
+                    <div class="layui-input-inline">
+                        <input type="checkbox" name="like1[write]" lay-skin="primary" title="写作" checked="">
+                        <!-- <input type="checkbox" name="like1[read]" lay-skin="primary" title="阅读"> -->
+                        <input type="checkbox" name="like1[game]" lay-skin="primary" title="游戏" disabled="">
+                    </div>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="layui-form-item layui-row layui-col-space10" pane>
+                <div class="layui-inline layui-col-md4">
+                    <label class="layui-form-label">分组选择框</label>
+                    <div class="layui-input-inline">
+                        <select name="quiz" lay-search>
+                            <option value="">请选择问题</option>
+                            <optgroup label="城市记忆">
+                                <option value="你工作的第一个城市">你工作的第一个城市</option>
+                            </optgroup>
+                            <optgroup label="学生时代">
+                                <option value="你的工号">你的工号</option>
+                                <option value="你最喜欢的老师">你最喜欢的老师</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline layui-col-md4">
+                    <label class="layui-form-label">单选框</label>
+                    <div class="layui-input-inline">
+                        <input type="radio" name="sex" value="nan" title="男">
+                        <input type="radio" name="sex" value="nv" title="女" checked>
+                        <!-- <input type="radio" name="sex" value="" title="中性" disabled> -->
+                    </div>
+                </div>
+                <div class="layui-inline layui-col-md4">
+                    <label class="layui-form-label">复选框</label>
+                    <div class="layui-input-inline">
+                        <input type="checkbox" name="likeX[write]" title="写作">
+                        <input type="checkbox" name="likeX[read]" title="阅读" checked="">
+                        <!-- <input type="checkbox" name="like[game]" title="游戏"> -->
+                    </div>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="layui-form-item layui-row layui-col-space10" pane>
+                <div class="layui-inline layui-col-md4">
+                    <label class="layui-form-label">分组选择框</label>
+                    <div class="layui-input-inline">
+                        <select name="quizX" lay-search>
+                            <option value="">请选择问题</option>
+                            <optgroup label="城市记忆">
+                                <option value="你工作的第一个城市">你工作的第一个城市</option>
+                            </optgroup>
+                            <optgroup label="学生时代">
+                                <option value="你的工号">你的工号</option>
+                                <option value="你最喜欢的老师">你最喜欢的老师</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline layui-col-md4">
+                    <label class="layui-form-label">单选框</label>
+                    <div class="layui-input-inline">
+                        <input type="radio" name="sexX" value="nan" title="男">
+                        <input type="radio" name="sexX" value="nv" title="女" checked>
+                        <!-- <input type="radio" name="sex" value="" title="中性" disabled> -->
+                    </div>
+                </div>
+                <div class="layui-inline layui-col-md4">
+                    <label class="layui-form-label">范围</label>
+                    <div class="layui-input-inline layui-input-range">
+                        <input type="text" name="price_min" placeholder="￥" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-form-mid">-</div>
+                    <div class="layui-input-inline layui-input-range">
+                        <input type="text" name="price_max" placeholder="￥" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="layui-form-item layui-row layui-col-space10">
+                <div class="layui-inline layui-col-md2 layui-col-md-offset10">
+                    <div class="layui-btn-container">
+                        <button class="layui-btn" lay-submit="" lay-filter="component-form-demo1">查询</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+        <table id="demoTable"></table>
+
+    </div>
+</div>
+
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" lay-event="new">新建</button>
+        <button class="layui-btn layui-btn-sm" lay-event="del">删除</button>
+    </div>
+</script>
+
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+<script>
+
+layui.use(['table', 'form', 'layer'], function () {
+  var table = layui.table;
+  var form = layui.form;
+  var layer = layui.layer;
+
+  form.render();
+
+  //展示已知数据
+  table.render({
+    elem: '#demoTable'
+    ,toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
+    ,cols: [[ //标题栏
+      {type: 'checkbox', fixed: 'left'}
+      ,{field: 'id', title: 'ID', width: 80, sort: true}
+      ,{field: 'username', title: '用户名', width: 120}
+      ,{field: 'email', title: '邮箱', minWidth: 150}
+      ,{field: 'sign', title: '签名', minWidth: 160}
+      ,{field: 'sex', title: '性别', width: 80}
+      ,{field: 'city', title: '城市', width: 100}
+      ,{field: 'experience', title: '积分', width: 80, sort: true}
+      ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:120}
+    ]]
+    ,data: [{
+      "id": "10001"
+      ,"username": "杜甫"
+      ,"email": "xianxin@layui.com"
+      ,"sex": "男"
+      ,"city": "浙江杭州"
+      ,"sign": "人生恰似一场修行"
+      ,"experience": "116"
+      ,"ip": "192.168.0.8"
+      ,"logins": "108"
+      ,"joinTime": "2016-10-14"
+    }, {
+      "id": "10002"
+      ,"username": "李白"
+      ,"email": "xianxin@layui.com"
+      ,"sex": "男"
+      ,"city": "浙江杭州"
+      ,"sign": "人生恰似一场修行"
+      ,"experience": "12"
+      ,"ip": "192.168.0.8"
+      ,"logins": "106"
+      ,"joinTime": "2016-10-14"
+      ,"LAY_CHECKED": true
+    }, {
+      "id": "10003"
+      ,"username": "王勃"
+      ,"email": "xianxin@layui.com"
+      ,"sex": "男"
+      ,"city": "浙江杭州"
+      ,"sign": "人生恰似一场修行"
+      ,"experience": "65"
+      ,"ip": "192.168.0.8"
+      ,"logins": "106"
+      ,"joinTime": "2016-10-14"
+    }, {
+      "id": "10004"
+      ,"username": "贤心"
+      ,"email": "xianxin@layui.com"
+      ,"sex": "男"
+      ,"city": "浙江杭州"
+      ,"sign": "人生恰似一场修行"
+      ,"experience": "666"
+      ,"ip": "192.168.0.8"
+      ,"logins": "106"
+      ,"joinTime": "2016-10-14"
+    }, {
+      "id": "10005"
+      ,"username": "贤心"
+      ,"email": "xianxin@layui.com"
+      ,"sex": "男"
+      ,"city": "浙江杭州"
+      ,"sign": "人生恰似一场修行"
+      ,"experience": "86"
+      ,"ip": "192.168.0.8"
+      ,"logins": "106"
+      ,"joinTime": "2016-10-14"
+    }, {
+      "id": "10006"
+      ,"username": "贤心"
+      ,"email": "xianxin@layui.com"
+      ,"sex": "男"
+      ,"city": "浙江杭州"
+      ,"sign": "人生恰似一场修行"
+      ,"experience": "12"
+      ,"ip": "192.168.0.8"
+      ,"logins": "106"
+      ,"joinTime": "2016-10-14"
+    }, {
+      "id": "10007"
+      ,"username": "贤心"
+      ,"email": "xianxin@layui.com"
+      ,"sex": "男"
+      ,"city": "浙江杭州"
+      ,"sign": "人生恰似一场修行"
+      ,"experience": "16"
+      ,"ip": "192.168.0.8"
+      ,"logins": "106"
+      ,"joinTime": "2016-10-14"
+    }, {
+      "id": "10008"
+      ,"username": "贤心"
+      ,"email": "xianxin@layui.com"
+      ,"sex": "男"
+      ,"city": "浙江杭州"
+      ,"sign": "人生恰似一场修行"
+      ,"experience": "106"
+      ,"ip": "192.168.0.8"
+      ,"logins": "106"
+      ,"joinTime": "2016-10-14"
+    }]
+    //,skin: 'line' //表格风格
+    ,page: {
+        limit: 5,
+        limits: [5],
+        groups: 3,
+        prev: '<i class="layui-icon layui-icon-left"></i>',
+        next: '<i class="layui-icon layui-icon-right"></i>',
+        layout: ['limit', 'count', 'prev', 'page', 'next', 'skip', 'refresh']
+    }, //是否显示分页
+    //,limits: [5, 7, 10]
+    //,limit: 5 //每页默认显示的数量
+  });
+});
+
+</script>
